@@ -1,7 +1,6 @@
 {
   "name": "NHL Post Maker",
-  "short_name": "NHL Post",
-  "description": "Create NHL final score posts for Instagram.",
+  "short_name": "Post Maker",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -9,8 +8,14 @@
   "theme_color": "#05070c",
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/app-icon.png",
-      "sizes": "128x128",
+      "src": "https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/app-icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/app-icon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
