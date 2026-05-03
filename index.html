@@ -3938,56 +3938,60 @@ if (els.homeScorersAbbrev) els.homeScorersAbbrev.textContent = homeAbbrev;
     }
 
     async function downloadPng() {
-      if (!state.generatedAtLeastOnce) {
-        await renderSelectedGame();
-        if (!state.generatedAtLeastOnce) return;
-      }
-
-      setStatus("Preparing PNG export from the live preview...");
-
-      let holder = null;
-
       try {
+        setStatus("Preparing PNG export...");
+        await syncPreviewForExport();
         await preloadTransducerFonts();
-        const { clone, holder: exportHolder } = await createExportNode();
-        holder = exportHolder;
 
-        await inlineImagesForExport(clone);
-        await waitForImages(clone);
-
-        const blob = await domtoimage.toBlob(clone, {
-          width: 1080,
-          height: 1080,
-          cacheBust: true,
-          bgcolor: 'transparent',
-          style: {
-            transform: 'none',
-            transformOrigin: 'top left'
-          }
-        });
-
-        if (!blob) throw new Error('dom-to-image-more returned an empty blob.');
-
-        saveBlob(blob, getDownloadFileName());
-        setStatus("PNG downloaded from the live preview.", "success");
-        return;
-      } catch (domError) {
-        console.error("Live preview export failed:", domError);
-      } finally {
-        if (holder && holder.parentNode) holder.parentNode.removeChild(holder);
-      }
-
-      try {
-        await preloadTransducerFonts();
         const blob = await renderCanvasExport();
         if (!blob) throw new Error("Unable to create PNG blob.");
 
         saveBlob(blob, getDownloadFileName());
-        setStatus("PNG downloaded with fallback export.", "success");
-      } catch (canvasError) {
-        console.error("Fallback canvas export failed:", canvasError);
-        setStatus("Export failed. The live-preview export and the fallback export both failed.", "error");
+        setStatus("PNG downloaded successfully.", "success");
+      } catch (error) {
+        console.error("PNG export failed:", error);
+        setStatus("Export failed. Please try again.", "error");
       }
+    }
+
+    async function syncPreviewForExport() {
+      if (state.customMode) {
+        await renderCustomMode();
+      } else if (state.currentLanding) {
+        await renderPost(state.currentLanding);
+        state.generatedAtLeastOnce = true;
+      } else {
+        await renderSelectedGame();
+        if (!state.generatedAtLeastOnce) {
+          throw new Error("No rendered preview is available to export.");
+        }
+      }
+
+      await waitForAnimationFrames(2);
+    }
+
+    function waitForAnimationFrames(count = 1) {
+      return new Promise(resolve => {
+        const step = remaining => {
+          if (remaining <= 0) {
+            resolve();
+            return;
+          }
+          requestAnimationFrame(() => step(remaining - 1));
+        };
+        step(count);
+      });
+    }
+
+     function getExportBackgroundDataUrl() {
+      const fromState = String(state.backgroundImageDataUrl || "").trim();
+      if (fromState) return fromState;
+
+      const inlineValue = String(els.post.style.getPropertyValue("--bg-image") || "").trim();
+      const computedValue = String(getComputedStyle(els.post).getPropertyValue("--bg-image") || "").trim();
+      const raw = inlineValue || computedValue;
+      const match = raw.match(/url\((?:"|')?(data:[^"')]+)(?:"|')?\)/i);
+      return match ? match[1].replace(/%22/g, '"') : "";
     }
 
     async function renderCanvasExport() {
@@ -4007,9 +4011,10 @@ if (els.homeScorersAbbrev) els.homeScorersAbbrev.textContent = homeAbbrev;
       ctx.fillStyle = baseGradient;
       ctx.fillRect(0, 0, W, H);
 
-      if (state.backgroundImageDataUrl) {
+      const exportBackgroundDataUrl = getExportBackgroundDataUrl();
+      if (exportBackgroundDataUrl) {
         try {
-          const bgImg = await loadCanvasImage(state.backgroundImageDataUrl);
+          const bgImg = await loadCanvasImage(exportBackgroundDataUrl);
           ctx.save();
           ctx.globalAlpha = Number(els.bgOpacity.value || 0.56);
           drawImageCover(ctx, bgImg, 0, 0, W, H, state.bgPositionX / 100, state.bgPositionY / 100, state.bgZoom / 100);
@@ -4208,19 +4213,42 @@ if (els.homeScorersAbbrev) els.homeScorersAbbrev.textContent = homeAbbrev;
       return { goalFont: 34, rowH: 40, titleFont: 20, scoreSize: 178, abvSize: 58, teamNameSize: 26, teamNameOffset: 48, cardTopPad: 18 };
     }
 
+    function drawBlurredCardBackdrop(ctx, backdropCanvas, x, y, w, h, radius = 24, blurAmount = 18) {
+      if (!backdropCanvas) return;
+
+      const pad = Math.max(24, Math.ceil(blurAmount * 2.2));
+      const tempCanvas = document.createElement("canvas");
+      tempCanvas.width = Math.ceil(w + pad * 2);
+      tempCanvas.height = Math.ceil(h + pad * 2);
+
+      const tempCtx = tempCanvas.getContext("2d");
+      tempCtx.filter = `blur(${blurAmount}px)`;
+      tempCtx.drawImage(
+        backdropCanvas,
+        x - pad,
+        y - pad,
+        w + pad * 2,
+        h + pad * 2,
+        0,
+        0,
+        tempCanvas.width,
+        tempCanvas.height
+      );
+      tempCtx.filter = "none";
+
+      ctx.save();
+      roundRectPath(ctx, x, y, w, h, radius);
+      ctx.clip();
+      ctx.drawImage(tempCanvas, x - pad, y - pad);
+      ctx.restore();
+    }
+    
     function drawScorerCard(ctx, backdropCanvas, x, y, w, h, abv, goals, density) {
       if (backdropCanvas) {
-        ctx.save();
-        roundRectPath(ctx, x, y, w, h, 24);
-        ctx.clip();
-        const pad = 18;
-        ctx.filter = "blur(14px)";
-        ctx.drawImage(backdropCanvas, x - pad, y - pad, w + pad * 2, h + pad * 2, x - pad, y - pad, w + pad * 2, h + pad * 2);
-        ctx.filter = "none";
-        ctx.restore();
+        drawBlurredCardBackdrop(ctx, backdropCanvas, x, y, w, h, 24, 18);
       }
 
-      drawRoundRect(ctx, x, y, w, h, 24, "rgba(0,0,0,0.14)", "rgba(255,255,255,0.10)");
+      drawRoundRect(ctx, x, y, w, h, 24, "rgba(0,0,0,0.18)", "rgba(255,255,255,0.10)");
 
       ctx.textBaseline = "middle";
       setCanvasFont(ctx, 600, density.titleFont, "transducer-extended");
