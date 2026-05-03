@@ -1,0 +1,18 @@
+{
+  "name": "NHL Post Maker",
+  "short_name": "NHL Post",
+  "description": "Create NHL final score posts for Instagram.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#05070c",
+  "theme_color": "#05070c",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/app-icon.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
