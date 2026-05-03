@@ -3093,8 +3093,8 @@
       els.awayScore.textContent = sanitizeScoreInput(els.customAwayScore?.value);
       els.homeScore.textContent = sanitizeScoreInput(els.customHomeScore?.value);
 
-      els.awayScorersAbbrev.textContent = awayAbbrev || "AWY";
-      els.homeScorersAbbrev.textContent = homeAbbrev || "HME";
+      if (els.awayScorersAbbrev) els.awayScorersAbbrev.textContent = awayAbbrev || "AWY";
+if (els.homeScorersAbbrev) els.homeScorersAbbrev.textContent = homeAbbrev || "HME";
 
       setElementDisplay(els.finalBadge, els.customShowState?.checked !== false, "");
       if (els.customShowState?.checked !== false) {
@@ -3299,8 +3299,8 @@
         ? String(livePeriodSnapshot.homeScore)
         : getTeamScore(home);
 
-      els.awayScorersAbbrev.textContent = awayAbbrev;
-      els.homeScorersAbbrev.textContent = homeAbbrev;
+      if (els.awayScorersAbbrev) els.awayScorersAbbrev.textContent = awayAbbrev;
+if (els.homeScorersAbbrev) els.homeScorersAbbrev.textContent = homeAbbrev;
 
       const scorerGroups = collectGoalScorers(
         landing,
