@@ -1,0 +1,4493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <title>NHL Final Score Instagram Maker</title>
+  <!-- DOM-to-image export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+          integrity="sha512-BNa5ohbYgY6AHwX32XOZhq9n45yW7CdN6q91WEZ1djlOVhRxfHY7Xh6qnpXxBjWVFhoD3hN9f4bCmyZ11ZVb9A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@3.3.0/dist/dom-to-image-more.min.js"></script>
+
+  <style>
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Hairline.woff2') format('woff2');
+      font-weight: 100;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Hairline%20Italic.woff2') format('woff2');
+      font-weight: 100;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Regular%20Italic.woff2') format('woff2');
+      font-weight: 400;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Medium%20Italic.woff2') format('woff2');
+      font-weight: 500;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Bold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Bold%20Italic.woff2') format('woff2');
+      font-weight: 600;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Black%20Italic.woff2') format('woff2');
+      font-weight: 900;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Hairline.woff2') format('woff2');
+      font-weight: 100;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Hairline%20Italic.woff2') format('woff2');
+      font-weight: 100;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Regular%20Italic.woff2') format('woff2');
+      font-weight: 400;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Medium%20Italic.woff2') format('woff2');
+      font-weight: 500;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Bold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Bold%20Italic.woff2') format('woff2');
+      font-weight: 600;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Black%20Italic.woff2') format('woff2');
+      font-weight: 900;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Hairline.woff2') format('woff2');
+      font-weight: 100;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Hairline%20Italic.woff2') format('woff2');
+      font-weight: 100;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Regular%20Italic.woff2') format('woff2');
+      font-weight: 400;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Medium%20Italic.woff2') format('woff2');
+      font-weight: 500;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Bold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Bold%20Italic.woff2') format('woff2');
+      font-weight: 600;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Black%20Italic.woff2') format('woff2');
+      font-weight: 900;
+      font-style: italic;
+      font-display: block;
+    }
+
+    :root {
+      --page-bg: #090b12;
+      --panel-bg: rgba(255,255,255,.08);
+      --panel-border: rgba(255,255,255,.16);
+      --text: #f6f7fb;
+      --muted: rgba(246,247,251,.68);
+      --accent: #e9eefc;
+      --danger: #ff5a6c;
+      --success: #83ffb1;
+      --away-color: #275EFE;
+      --home-color: #D62539;
+      --away-color-2: #9BB5FF;
+      --home-color-2: #FFB2BC;
+      --away-color-3: #DDE7FF;
+      --home-color-3: #FFE0E5;
+      --away-color-banner: rgba(39, 94, 254, .28);
+      --home-color-banner: rgba(214, 37, 57, .28);
+      --away-color-glow: rgba(39, 94, 254, .42);
+      --home-color-glow: rgba(214, 37, 57, .42);
+      --preview-scale: .48;
+      --bg-pos-x: 50%;
+      --bg-pos-y: 50%;
+      --bg-zoom: 1.03;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(83, 113, 255, .24), transparent 26%),
+        radial-gradient(circle at 82% 16%, rgba(255, 42, 90, .22), transparent 28%),
+        linear-gradient(135deg, #06070c, #101420 54%, #07080d);
+      color: var(--text);
+      font-family: transducer, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      gap: 24px;
+      width: min(1480px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 24px 0;
+    }
+
+    .panel,
+    .preview-panel {
+      border: 1px solid var(--panel-border);
+      background: rgba(8, 10, 18, .72);
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+      backdrop-filter: blur(20px);
+      border-radius: 28px;
+    }
+
+    .panel {
+      padding: 22px;
+      align-self: start;
+      position: sticky;
+      top: 18px;
+    }
+
+    .preview-panel {
+      padding: 22px;
+      min-width: 0;
+    }
+
+    .toolbox {
+      margin-bottom: 18px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.035));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    .toolbox-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .toolbox-title {
+      margin: 0;
+      font-family: transducer, sans-serif;
+        font-weight: 500;
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: -.03em;
+      text-transform: uppercase;
+    }
+
+    .toolbox-subtitle {
+      color: rgba(246,247,251,.56);
+      font-size: 12px;
+      line-height: 1.3;
+      text-align: right;
+      max-width: 180px;
+    }
+
+    .responsive-toolbox-slot:empty {
+      display: none;
+    }
+
+    .responsive-toolbox-slot {
+      margin-top: 18px;
+    }
+
+    .preview-panel .toolbox {
+      margin-bottom: 0;
+    }
+    .mode-switch-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 0;
+    }
+
+    .mode-switch-text {
+      color: rgba(246,247,251,.86);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+        margin-bottom: 13px;
+        font-family: transducer condensed;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-flex;
+      width: 52px;
+      height: 30px;
+      flex: 0 0 auto;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+
+    .switch-slider {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      transition: .2s ease;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+
+    .switch-slider::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      left: 3px;
+      top: 3px;
+      background: #fff;
+      transition: .2s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    .switch input:checked + .switch-slider {
+      background: rgba(127, 157, 255, .42);
+      border-color: rgba(159,182,255,.52);
+    }
+
+    .switch input:checked + .switch-slider::before {
+      transform: translateX(22px);
+    }
+
+    .option-check input {
+      width: 16px;
+      height: 16px;
+      accent-color: #9fb6ff;
+      flex: 0 0 auto;
+    }
+
+    .custom-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .custom-panel[hidden],
+    #automaticConfig[hidden] {
+      display: none !important;
+    }
+
+    .custom-section {
+      margin-bottom: 0;
+    }
+
+    .custom-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .custom-grid .field {
+      margin-bottom: 0;
+    }
+
+    .custom-grid .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .option-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(246,247,251,.72);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .01em;
+      margin-bottom: 8px;
+    }
+
+    .inline-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .inline-label-row label {
+      margin-bottom: 0;
+    }
+
+    .textarea-input {
+      width: 100%;
+      min-height: 112px;
+      resize: vertical;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px;
+      background: rgba(255,255,255,.04);
+      color: #fff;
+      font: inherit;
+      padding: 12px 14px;
+      outline: none;
+        margin-top: 10px
+    }
+
+    .textarea-hint {
+      display: block;
+      margin-top: 0px;
+      color: rgba(246,247,251,.54);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+      
+    .textarea-hint-2 {
+        display: block;
+        color: rgba(246,247,251,.54);
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .toolbox-subtitle.tight {
+      max-width: none;
+      text-align: left;
+      line-height: 1.45;
+    }
+
+    #post.custom-mode .edge-stripe,
+    #post.custom-mode .post-glow {
+      display: none;
+    }
+
+    @media (max-width: 700px) {
+      .custom-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-family: transducer-extended, transducer, sans-serif;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.16);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .field small {
+      color: rgba(246,247,251,.46);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .control-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .subfield.full {
+      grid-column: 1 / -1;
+    }
+
+    .subfield {
+      min-width: 0;
+    }
+
+    .subfield label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: rgba(246,247,251,.82);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .range-value {
+      color: rgba(246,247,251,.54);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 14px;
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      padding: 0 12px;
+      outline: none;
+    }
+
+    select option {
+      color: #05070c;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    input[type="range"] {
+      padding: 0;
+      accent-color: #ffffff;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      border: 0;
+      border-radius: 16px;
+      padding: 0 16px;
+      cursor: pointer;
+      color: #05070c;
+      background: #ffffff;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      transition: transform .18s ease, opacity .18s ease, background .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn.secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    .btn.full {
+      width: 100%;
+    }
+
+    .status {
+      min-height: 20px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .status.error {
+      color: var(--danger);
+    }
+
+    .status.success {
+      color: var(--success);
+    }
+
+    .preview-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .preview-top h2 {
+      margin: 0;
+      font-family: transducer-extended, transducer, sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+
+    .preview-top p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .preview-shell {
+      width: min(100%, 720px);
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #000;
+      box-shadow: 0 24px 80px rgba(0,0,0,.5);
+      position: relative;
+    }
+
+    .preview-scaler {
+      width: 1080px;
+      height: 1080px;
+      transform: scale(var(--preview-scale));
+      transform-origin: top left;
+    }
+
+    /* -----------------------------
+       1080 x 1080 export design
+    ------------------------------ */
+
+    #post {
+      width: 1080px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(120deg, rgba(0,0,0,.86), rgba(0,0,0,.42)),
+        radial-gradient(circle at 22% 24%, var(--away-color-glow), transparent 38%),
+        radial-gradient(circle at 82% 32%, var(--home-color-glow), transparent 40%),
+        linear-gradient(135deg, #070a10, #151824);
+      isolation: isolate;
+      color: #fff;
+    }
+
+    #post::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--bg-image, none);
+      background-size: cover;
+      background-position: var(--bg-pos-x, 50%) var(--bg-pos-y, 50%);
+      opacity: var(--bg-opacity, .56);
+      transform: scale(var(--bg-zoom, 1.03));
+      transform-origin: var(--bg-pos-x, 50%) var(--bg-pos-y, 50%);
+      filter: saturate(1.08) contrast(1.05);
+      z-index: -3;
+    }
+
+    #post::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg,
+          var(--away-color-banner) 0%,
+          transparent 34%,
+          transparent 66%,
+          var(--home-color-banner) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.10) 56%, rgba(0,0,0,.18));
+      z-index: -2;
+    }
+
+    .post-texture {
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,.045) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, transparent 1px 22px);
+      mix-blend-mode: overlay;
+      opacity: .18;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .post-glow {
+      position: absolute;
+      width: 720px;
+      height: 720px;
+      border-radius: 999px;
+      filter: blur(54px);
+      opacity: .30;
+      pointer-events: none;
+    }
+
+    .post-glow.away {
+      left: -260px;
+      top: -200px;
+      background: var(--away-color-glow);
+    }
+
+    .post-glow.home {
+      right: -260px;
+      top: -150px;
+      background: var(--home-color-glow);
+    }
+
+    .edge-stripe {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      filter: none;
+      -webkit-mask-image: linear-gradient(180deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0) 14%,
+        rgba(0,0,0,.06) 24%,
+        rgba(0,0,0,.24) 34%,
+        rgba(0,0,0,.62) 44%,
+        rgba(0,0,0,.92) 52%,
+        rgba(0,0,0,1) 58%,
+        rgba(0,0,0,1) 100%);
+      mask-image: linear-gradient(180deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0) 14%,
+        rgba(0,0,0,.06) 24%,
+        rgba(0,0,0,.24) 34%,
+        rgba(0,0,0,.62) 44%,
+        rgba(0,0,0,.92) 52%,
+        rgba(0,0,0,1) 58%,
+        rgba(0,0,0,1) 100%);
+    }
+
+    .edge-stripe::before,
+    .edge-stripe::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+    }
+
+    .edge-stripe.away {
+      left: 0;
+      background: linear-gradient(
+        90deg,
+        var(--away-color) 0%,
+        var(--away-color) calc(100% - 8px),
+        transparent calc(100% - 8px),
+        transparent 100%
+      );
+    }
+
+    .edge-stripe.away::before {
+      background: var(--away-color-2);
+      clip-path: polygon(-6% 66.8%, 106% 65.2%, 106% 106%, -6% 106%);
+    }
+
+    .edge-stripe.away::after {
+      background: var(--away-color-3);
+      inset: -4px -12px -4px -4px;
+      clip-path: polygon(-6% 89.9%, 106% 88.3%, 106% 106%, -6% 106%);
+    }
+
+    .edge-stripe.home {
+      right: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 8px,
+        var(--home-color) 8px,
+        var(--home-color) 100%
+      );
+    }
+
+    .edge-stripe.home::before {
+      background: var(--home-color-2);
+      clip-path: polygon(-6% 65.2%, 106% 66.8%, 106% 106%, -6% 106%);
+    }
+
+    .edge-stripe.home::after {
+      background: var(--home-color-3);
+      clip-path: polygon(-6% 88.3%, 106% 89.9%, 106% 106%, -6% 106%);
+    }
+
+    .post-inner {
+      z-index: 2;
+      position: absolute;
+      inset: 42px 50px 44px;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 16px;
+    }
+
+    .post-header {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 128px;
+    }
+
+    .header-left {
+      display: contents;
+    }
+
+    .header-center {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      min-width: 0;
+      width: max-content;
+      pointer-events: none;
+    }
+
+    .header-mark {
+      display: block;
+      width: 150px;
+      max-width: none;
+      max-height: none;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,.28));
+      pointer-events: none;
+      margin-left: 10px;
+    }
+
+    .final-pill {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-self: start;
+      width: max-content;
+      min-height: 54px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.28), 0 16px 40px rgba(0,0,0,.22);
+      backdrop-filter: blur(14px);
+      font-family: transducer-extended, transducer, sans-serif;
+      font-weight: 600;
+      font-size: 26px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+
+    .series-meta {
+      min-height: 0;
+      color: rgba(255,255,255,.92);
+      font-family: transducer-condensed, transducer, sans-serif;
+      font-size: 29px;
+      font-weight: 100;
+      line-height: 1;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-shadow: 0 10px 24px rgba(0,0,0,.5);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .series-meta:empty {
+      display: none;
+    }
+
+    .post-date {
+      position: relative;
+      z-index: 1;
+      justify-self: end;
+      align-self: flex-start;
+      color: rgba(255,255,255,.76);
+      font-family: transducer-condensed, transducer, sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      text-align: right;
+      margin-top: 0;
+      white-space: nowrap;
+    }
+
+    .scoreboard {
+      min-height: 0;
+      height: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 90px minmax(0, 1fr);
+      align-items: end;
+      gap: 10px;
+      align-self: stretch;
+      position: relative;
+    }
+
+    .team-block {
+      position: relative;
+      min-height: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 6px;
+      min-width: 0;
+      border: 0;
+      background: transparent;
+      border-radius: 0;
+      padding: 4px 8px 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      overflow: visible;
+      align-content: stretch;
+    }
+
+    .team-block::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 20%, var(--team-color-soft, rgba(255,255,255,.08)), transparent 62%);
+      opacity: .22;
+      pointer-events: none;
+    }
+
+    .team-block > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-logo-wrap {
+      width: 100%;
+      height: 248px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-top: 0;
+      margin-bottom: 2px;
+      flex: 0 0 auto;
+      overflow: visible;
+    }
+
+    .team-logo {
+      display: block;
+      max-width: 430px;
+      height: 246px;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 26px rgba(0,0,0,.34));
+    }
+
+    .team-meta {
+      text-align: center;
+      display: grid;
+      gap: 2px;
+      flex: 0 0 auto;
+    }
+
+    .team-abbrev {
+      margin: 0;
+      font-family: transducer-extended, transducer, sans-serif;
+      font-size: 58px;
+      font-weight: 600;
+      line-height: .9;
+      text-transform: uppercase;
+      letter-spacing: -.0em;
+      text-shadow: 0 14px 34px rgba(0,0,0,.28);
+    }
+
+    .team-name {
+      color: rgba(255,255,255,.88);
+      font-family: transducer, sans-serif;
+      font-size: 24px;
+      font-weight: 100;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .score {
+      width: 100%;
+      margin-top: 2px;
+      align-self: end;
+      text-align: center;
+      font-family: transducer-extended, transducer, sans-serif;
+      font-size: 178px;
+      font-weight: 600;
+      line-height: .82;
+      letter-spacing: -.12em;
+      text-shadow: 0 18px 32px rgba(0,0,0,.30);
+    }
+
+    #awayBlock .team-logo-wrap {
+      justify-content: flex-start;
+    }
+
+    #homeBlock .team-logo-wrap {
+      justify-content: flex-end;
+    }
+
+    #awayBlock .team-meta,
+    #awayScore {
+      text-align: left;
+    }
+
+    #homeBlock .team-meta,
+    #homeScore {
+      text-align: right;
+    }
+
+    #awayScore {
+      padding-left: 4px;
+    }
+
+    #homeScore {
+      padding-right: 15px;
+    }
+
+    #awayBlock .team-logo-wrap {
+      justify-content: flex-start;
+      margin-left: -60px;
+    }
+
+    #homeBlock .team-logo-wrap {
+      justify-content: flex-end;
+      margin-left: 60px;
+    }
+
+    #awayBlock .team-logo {
+      transform: translateY(-14px) translateX(var(--away-logo-offset, 0px));
+      transform-origin: left center;
+    }
+
+    #homeBlock .team-logo {
+      transform: translateY(-14px) translateX(var(--home-logo-offset, 0px));
+      transform-origin: right center;
+    }
+
+
+    .middle-score {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 28px;
+      opacity: 1;
+      min-height: 0;
+    }
+
+    .middle-score .series-meta {
+      position: absolute;
+      left: 50%;
+      bottom: 0px;
+      transform: translateX(-50%);
+      z-index: 5;
+    
+      font-size: 31px;
+      font-weight: 100;
+      line-height: 1;
+      letter-spacing: .08em;
+      text-align: center;
+      white-space: nowrap;
+      max-width: 90%;
+    }
+
+    .versus {
+      min-width: 72px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+      color: rgba(255,255,255,.74);
+      font-family: transducer-extended, transducer, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .scorers-zone {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+      margin-top: 12px;
+    }
+
+    .scorers-card {
+      min-height: 160px;
+      height: 100%;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 24px;
+      background: rgba(0,0,0,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 16px 20px;
+      overflow: hidden;
+    }
+
+    .scorers-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+      color: rgba(255,255,255,.84);
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+    }
+
+    .scorers-title strong {
+      color: #fff;
+      font-family: transducer-extended, transducer, sans-serif;
+      letter-spacing: -.03em;
+    }
+
+    .goal-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .goal-list li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 34px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding-bottom: 8px;
+      font-family: transducer, sans-serif;
+      font-size: 28px;
+      font-weight: 100;
+      letter-spacing: .01em;
+      line-height: 1.02;
+    }
+
+    .goal-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .goal-list em {
+      color: rgba(255,255,255,.68);
+      font-style: normal;
+      white-space: nowrap;
+    }
+
+    .empty-goals {
+      color: rgba(255,255,255,.46);
+      font-family: transducer-condensed, transducer, sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .image-credit {
+      position: absolute;
+      left: 2px;
+      bottom: -30px;
+      right: 0;
+      min-height: 18px;
+      color: rgba(255,255,255,.6);
+      font-family: transducer-condensed, transducer, sans-serif;
+      font-size: 18px;
+      font-weight: 100;
+      letter-spacing: .04em;
+      line-height: 1.1;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none;
+    }
+
+    .image-credit:empty {
+      display: none;
+    }
+
+    .post-footer {
+      display: none;
+    }
+
+    .footer-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+    }
+
+
+    #post.density-medium .post-inner {
+      inset: 40px 48px 42px;
+      gap: 14px;
+    }
+
+    #post.density-medium .score {
+      font-size: 164px;
+    }
+
+    #post.density-medium .middle-score {
+      padding-bottom: 22px;
+    }
+
+    #post.density-medium .team-logo-wrap {
+      height: 146px;
+    }
+
+    #post.density-medium .team-logo {
+      max-height: 142px;
+    }
+
+    #post.density-medium .goal-list li {
+      font-size: 26px;
+      min-height: 30px;
+    }
+
+    #post.density-heavy .post-inner {
+      inset: 36px 42px 40px;
+      gap: 12px;
+    }
+
+    #post.density-heavy .scoreboard {
+      gap: 10px;
+      grid-template-columns: 1fr 84px 1fr;
+    }
+
+    #post.density-heavy .middle-score {
+      padding-bottom: 18px;
+    }
+
+    #post.density-heavy .score {
+      font-size: 148px;
+    }
+
+    #post.density-heavy .team-abbrev {
+      font-size: 52px;
+    }
+
+    #post.density-heavy .team-name {
+      font-size: 24px;
+    }
+
+    #post.density-heavy .team-logo-wrap {
+      height: 132px;
+    }
+
+    #post.density-heavy .team-logo {
+      max-height: 126px;
+    }
+
+    #post.density-heavy .goal-list {
+      gap: 5px;
+    }
+
+    #post.density-heavy .goal-list li {
+      font-size: 24px;
+      min-height: 26px;
+      padding-bottom: 5px;
+    }
+
+    #post.density-heavy .scorers-card {
+      padding: 14px 16px;
+      min-height: 148px;
+    }
+
+    #post.density-heavy .scorers-title {
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    #post.density-extreme .post-inner {
+      inset: 30px 36px 34px;
+      gap: 10px;
+    }
+
+    #post.density-extreme .scoreboard {
+      gap: 8px;
+      grid-template-columns: 1fr 76px 1fr;
+    }
+
+    #post.density-extreme .middle-score {
+      padding-bottom: 16px;
+    }
+
+    #post.density-extreme .versus {
+      min-width: 62px;
+      height: 34px;
+      font-size: 15px;
+    }
+
+    #post.density-extreme .score {
+      font-size: 132px;
+    }
+
+    #post.density-extreme .team-abbrev {
+      font-size: 46px;
+    }
+
+    #post.density-extreme .team-name {
+      font-size: 21px;
+    }
+
+    #post.density-extreme .team-logo-wrap {
+      height: 116px;
+    }
+
+    #post.density-extreme .team-logo {
+      max-height: 108px;
+    }
+
+    #post.density-extreme .goal-list {
+      gap: 4px;
+    }
+
+    #post.density-extreme .goal-list li {
+      font-size: 22px;
+      min-height: 22px;
+      padding-bottom: 4px;
+    }
+
+    #post.density-extreme .scorers-card {
+      padding: 10px 14px;
+      min-height: 136px;
+      border-radius: 18px;
+    }
+
+    #post.density-extreme .scorers-title {
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 1100px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        position: relative;
+        top: 0;
+      }
+
+      .preview-shell {
+        width: min(100%, 680px);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .app {
+        width: min(100vw - 18px, 1480px);
+        padding: 9px 0;
+        gap: 12px;
+      }
+
+      .panel,
+      .preview-panel {
+        border-radius: 20px;
+        padding: 16px;
+      }
+
+      .row {
+        flex-direction: column;
+      }
+
+      .preview-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+      
+    .bi {
+        margin-left: 5px;
+        opacity: 0.8;
+      }
+      
+    #renderBtn {
+        font-family: transducer;
+        font-weight: 600;
+        background: #7FF7AB;
+      }
+      
+    #downloadBtn {
+        font-family: transducer;
+        font-weight: 600
+      }
+      
+    #loadGamesBtn {
+        font-family: transducer;
+        font-weight: 600;
+        background: #7FF7AB;
+        color: black;
+      }
+      
+    .inline-label-row {
+        margin-bottom: -15px;
+      }
+      
+    #uploadedImageTools {
+        margin-top: 15px;
+      }
+      
+  </style>
+</head>
+
+<body>
+  <main class="app">
+    <aside class="panel">
+      <div class="brand">
+        <h1>NHL Post Maker</h1>
+      </div>
+
+      <div class="field">
+        <div class="mode-switch-row">
+          <label class="switch" for="customModeToggle" aria-label="Toggle custom mode">
+            <input id="customModeToggle" type="checkbox" />
+            <span class="switch-slider"></span>
+          </label>
+          <span class="mode-switch-text">Custom mode <i class="bi bi-pen"></i></span>
+        </div>
+      </div>
+
+      <div id="automaticConfig">
+      <div class="field">
+        <label for="gameDate">Game date <small>Today by default</small></label>
+        <div class="row">
+          <input id="gameDate" type="date" />
+          <button id="loadGamesBtn" class="btn secondary" type="button">Load</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="gameSelect">Game</label>
+        <select id="gameSelect">
+          <option value="">Load a date first</option>
+        </select>
+      </div>
+
+
+      </div>
+
+      <div id="customPanel" class="custom-panel" hidden>
+        <div class="toolbox">
+          <div class="toolbox-head">
+            <h3 class="toolbox-title">Custom mode</h3>
+            <div class="toolbox-subtitle tight">Build the visual manually. In this mode, the app ignores the automatic game-based content and uses only the controls below.</div>
+          </div>
+        </div>
+
+        <div class="toolbox custom-section">
+          <div class="toolbox-head">
+            <h3 class="toolbox-title">MISCELLANEOUS <i class="bi bi-three-dots"></i></h3>
+          </div>
+          <div class="custom-grid">
+            <div class="field full">
+              <div class="inline-label-row">
+                <label for="customStateText">Game state</label>
+                <label class="option-check" for="customShowState"><input id="customShowState" type="checkbox" checked /></label>
+              </div>
+              <select id="customStateText">
+                <option value="Final" selected>Final</option>
+                <option value="Final / OT">Final / OT</option>
+                <option value="Final / SO">Final / SO</option>
+                <option value="End of 1st">End of 1st</option>
+                <option value="End of 2nd">End of 2nd</option>
+                <option value="End of 3rd">End of 3rd</option>
+                <option value="End of OT">End of OT</option>
+                <option value="End of OT 1">End of OT 1</option>
+                <option value="End of OT 2">End of OT 2</option>
+                <option value="End of OT 3">End of OT 3</option>
+                <option value="End of OT 4">End of OT 4</option>
+                <option value="End of OT 5">End of OT 5</option>
+                <option value="Live">Live</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <div class="inline-label-row">
+                <label for="customSeriesText">Top-middle text</label>
+                <label class="option-check" for="customShowSeries"><input id="customShowSeries" type="checkbox" checked /></label>
+              </div>
+              <input id="customSeriesText" type="text" maxlength="25" placeholder="Example: MTL leads series 3-2" />
+            </div>
+
+            <div class="field full">
+              <div class="inline-label-row">
+                <label for="customDate">Date</label>
+                <label class="option-check" for="customShowDate"><input id="customShowDate" type="checkbox" checked /></label>
+              </div>
+              <input id="customDate" type="date" />
+            </div>
+          </div>
+        </div>
+
+        <div class="toolbox custom-section">
+          <div class="toolbox-head">
+            <h3 class="toolbox-title">Teams <i class="bi bi-transparency"></i></h3>
+          </div>
+          <div class="custom-grid">
+            <div class="field">
+              <div class="inline-label-row">
+                <label for="customAwayLogoTeam">Away logo</label>
+                <label class="option-check" for="customShowAwayLogo"><input id="customShowAwayLogo" type="checkbox" checked /></label>
+              </div>
+              <select id="customAwayLogoTeam">
+                <option value="">None</option>
+              </select>
+              <span class="textarea-hint">Or upload custom</span>
+              <input id="customAwayLogoUpload" type="file" accept="image/*" />
+              <span class="textarea-hint">Custom logo horizontal position</span>
+              <input id="customAwayLogoOffset" type="range" min="-140" max="140" step="1" value="0" />
+            </div>
+
+            <div class="field">
+              <div class="inline-label-row">
+                <label for="customHomeLogoTeam">Home logo</label>
+                <label class="option-check" for="customShowHomeLogo"><input id="customShowHomeLogo" type="checkbox" checked /></label>
+              </div>
+              <select id="customHomeLogoTeam">
+                <option value="">None</option>
+              </select>
+              <span class="textarea-hint">Or upload custom</span>
+              <input id="customHomeLogoUpload" type="file" accept="image/*" />
+              <span class="textarea-hint">Custom logo horizontal position</span>
+              <input id="customHomeLogoOffset" type="range" min="-140" max="140" step="1" value="0" />
+            </div>
+
+            <div class="field">
+              <div class="inline-label-row">
+                <label for="customAwayAbbrev">Away abv</label>
+                <label class="option-check" for="customShowAwayAbbrev"><input id="customShowAwayAbbrev" type="checkbox" checked /></label>
+              </div>
+              <input id="customAwayAbbrev" type="text" maxlength="4" placeholder="AWY" />
+            </div>
+
+            <div class="field">
+              <div class="inline-label-row">
+                <label for="customHomeAbbrev">Home abv</label>
+                <label class="option-check" for="customShowHomeAbbrev"><input id="customShowHomeAbbrev" type="checkbox" checked /></label>
+              </div>
+              <input id="customHomeAbbrev" type="text" maxlength="4" placeholder="HME" />
+            </div>
+
+            <div class="field">
+              <div class="inline-label-row">
+                <label for="customAwayName">Away name</label>
+                <label class="option-check" for="customShowAwayName"><input id="customShowAwayName" type="checkbox" checked /></label>
+              </div>
+              <input id="customAwayName" type="text" maxlength="25" placeholder="Away Team" />
+            </div>
+
+            <div class="field">
+              <div class="inline-label-row">
+                <label for="customHomeName">Home name</label>
+                <label class="option-check" for="customShowHomeName"><input id="customShowHomeName" type="checkbox" checked /></label>
+              </div>
+              <input id="customHomeName" type="text" maxlength="25" placeholder="Home Team" />
+            </div>
+          </div>
+        </div>
+
+        <div class="toolbox custom-section">
+          <div class="toolbox-head">
+            <h3 class="toolbox-title">Scores</h3>
+          </div>
+          <div class="custom-grid">
+            <div class="field">
+              <label for="customAwayScore">Away score</label>
+              <input id="customAwayScore" type="text" maxlength="3" placeholder="Away" value="0" />
+            </div>
+            <div class="field">
+              <label for="customHomeScore">Home score</label>
+              <input id="customHomeScore" type="text" maxlength="3" placeholder="Home" value="0" />
+            </div>
+          </div>
+        </div>
+
+        <div class="toolbox custom-section">
+          <div class="toolbox-head">
+            <h3 class="toolbox-title">Goal scorers</h3>
+          </div>
+          <div class="custom-grid">
+            <div class="field full">
+              <label class="option-check" for="customHideAllScorers"><input id="customHideAllScorers" type="checkbox" />Hide both scorer cards completely</label>
+            </div>
+
+            <div class="field full">
+              <div class="inline-label-row">
+                <label for="customAwayScorers">Away scorers</label>
+              </div>
+              <textarea id="customAwayScorers" class="textarea-input" placeholder="One scorer per line. Use / to add goal numbers.&#10;Example: C. Caufield / 1, 2&#10;N. Suzuki / 3"></textarea>
+              <span class="textarea-hint">Format: one scorer per line.</span>
+                <span class="textarea-hint-2">Example: C. Caufield / 48</span>
+            </div>
+
+            <div class="field full">
+              <div class="inline-label-row">
+                <label for="customHomeScorers">Home scorers</label>
+              </div>
+              <textarea id="customHomeScorers" class="textarea-input" placeholder="One scorer per line. Use / to add goal numbers.&#10;Example: N. Kucherov / 1&#10;B. Point / 2"></textarea>
+              <span class="textarea-hint">Format: one scorer per line.</span>
+                <span class="textarea-hint-2">Example: N. Kucherov / 36</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panelToolboxSlot"></div>
+      <div id="uploadedImageTools" class="toolbox">
+        <div class="toolbox-head">
+          <h3 class="toolbox-title">Background image <i class="bi bi-image"></i></h3>
+        </div>
+
+        <div class="field">
+          <label for="backgroundInput">Background image <small>Optional</small></label>
+          <input id="backgroundInput" type="file" accept="image/*" />
+        </div>
+
+        <div class="field">
+          <label for="bgOpacity">Background opacity</label>
+          <input id="bgOpacity" type="range" min="0" max="1" step="0.01" value="0.56" />
+        </div>
+
+        <div class="field">
+          <label>Background framing <small>Move the uploaded image inside the square</small></label>
+          <div class="control-grid">
+            <div class="subfield">
+              <label for="bgPosX"><span>Horizontal</span><span id="bgPosXValue" class="range-value">50%</span></label>
+              <input id="bgPosX" type="range" min="0" max="100" step="1" value="50" />
+            </div>
+            <div class="subfield">
+              <label for="bgPosY"><span>Vertical</span><span id="bgPosYValue" class="range-value">50%</span></label>
+              <input id="bgPosY" type="range" min="0" max="100" step="1" value="50" />
+            </div>
+            <div class="subfield full">
+              <label for="bgZoom"><span>Zoom</span><span id="bgZoomValue" class="range-value">103%</span></label>
+              <input id="bgZoom" type="range" min="100" max="180" step="1" value="103" />
+            </div>
+          </div>
+        </div>
+
+
+        <div class="field">
+          <label for="imageCreditInput">Image credit (optional)</label>
+          <input id="imageCreditInput" type="text" maxlength="120" placeholder="Name / Source" />
+        </div>
+      </div>
+
+      <div class="field">
+        <button id="renderBtn" class="btn full" type="button"><i class="bi bi-stars"></i>Generate visual</button>
+      </div>
+
+      <div class="field">
+        <button id="downloadBtn" class="btn full secondary" type="button"><i class="bi bi-download"></i> Download PNG</button>
+      </div>
+
+      <div id="status" class="status">Ready. Choose a date, load games, then generate the visual. NHL data is loaded through your Cloudflare Worker.</div>
+    </aside>
+
+    <section class="preview-panel">
+      <div class="preview-top">
+        <div>
+          <h2>Preview</h2>
+          <p>The exported image remains exactly 1080 × 1080, even if this preview is scaled down.</p>
+        </div>
+      </div>
+
+      <div id="previewShell" class="preview-shell">
+        <div id="previewScaler" class="preview-scaler">
+          <article id="post">
+            <div class="post-texture"></div>
+            <div class="post-glow away"></div>
+            <div class="post-glow home"></div>
+            <div class="edge-stripe away"></div>
+            <div class="edge-stripe home"></div>
+
+            <div class="post-inner">
+              <header class="post-header">
+                <div id="finalBadge" class="final-pill">Final</div>
+                <div class="header-center">
+                  <img id="headerMark" class="header-mark" alt="Header mark" crossorigin="anonymous" referrerpolicy="no-referrer" src="https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/NHLDLogoV2.png" />
+                </div>
+                <div id="postDate" class="post-date">Select a game</div>
+              </header>
+
+              <section class="scoreboard">
+                <div id="awayBlock" class="team-block away-side" style="--team-color: var(--away-color);">
+                  <div class="team-logo-wrap">
+                    <img id="awayLogo" class="team-logo" alt="Away team logo" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                  </div>
+                  <div class="team-meta">
+                    <h2 id="awayAbbrev" class="team-abbrev">AWY</h2>
+                    <div id="awayName" class="team-name">Away Team</div>
+                  </div>
+                  <div id="awayScore" class="score">0</div>
+                </div>
+
+                <div class="middle-score">
+                  <div id="seriesMeta" class="series-meta"></div>
+                </div>
+
+                <div id="homeBlock" class="team-block home-side" style="--team-color: var(--home-color);">
+                  <div class="team-logo-wrap">
+                    <img id="homeLogo" class="team-logo" alt="Home team logo" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                  </div>
+                  <div class="team-meta">
+                    <h2 id="homeAbbrev" class="team-abbrev">HME</h2>
+                    <div id="homeName" class="team-name">Home Team</div>
+                  </div>
+                  <div id="homeScore" class="score">0</div>
+                </div>
+              </section>
+
+              <section class="scorers-zone">
+                <div id="awayScorersCard" class="scorers-card">
+                  
+                  <ul id="awayGoals" class="goal-list"></ul>
+                </div>
+
+                <div id="homeScorersCard" class="scorers-card">
+                  <ul id="homeGoals" class="goal-list"></ul>
+                </div>
+              </section>
+
+              <div id="imageCredit" class="image-credit"></div>
+
+              <footer class="post-footer">
+                <span>NHL Final Score</span>
+                <span class="footer-line"></span>
+                <span id="footerGameId">Game ID</span>
+              </footer>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div id="responsiveToolboxSlot" class="responsive-toolbox-slot"></div>
+    </section>
+  </main>
+
+  <script>
+    /*
+      NHL Final Score Instagram Maker
+      - Uses NHL Web API for schedule/gamecenter data
+      - Uses your Team Assets JSON for team colors/logos
+      - Uses your Player Assets JSON as a fallback for player names
+    */
+
+    const TEAM_ASSETS_URL = "https://script.google.com/macros/s/AKfycbwlqptAxL2hZ7jqAipNR50iVAooAy46ifa0rQXCxouOqOohMcoSxjGEz8pSdt_lK-gAmw/exec";
+    const PLAYER_ASSETS_URL = "https://script.google.com/macros/s/AKfycbz5lFU3O2l_xohqu86r6Hdx_wrqFJstNOoRRrwyNnQtsMM9UcLxWPXlt57hArFEeRY9/exec";
+
+    /*
+      The NHL API can be blocked by browser CORS rules when called directly
+      from a static HTML page. This fallback proxy is meant for testing.
+      For a production page, replace this with your own proxy endpoint
+      through Apps Script, Vercel, Cloudflare Workers, Render, etc.
+    */
+    const MY_NHL_PROXY = "https://nhl-instagram-proxy.valleetim04.workers.dev";
+    const CACHE_TTL_MS = 1000 * 60 * 45;
+    const CUSTOM_PREFS_KEY = "nhl-post-maker-custom-preferences-v1";
+    const LOCAL_FONT_FACE_CSS = `    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Hairline.woff2') format('woff2');
+      font-weight: 100;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Hairline%20Italic.woff2') format('woff2');
+      font-weight: 100;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Regular%20Italic.woff2') format('woff2');
+      font-weight: 400;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Medium%20Italic.woff2') format('woff2');
+      font-weight: 500;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Bold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Bold%20Italic.woff2') format('woff2');
+      font-weight: 600;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Black%20Italic.woff2') format('woff2');
+      font-weight: 900;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Hairline.woff2') format('woff2');
+      font-weight: 100;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Hairline%20Italic.woff2') format('woff2');
+      font-weight: 100;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Regular%20Italic.woff2') format('woff2');
+      font-weight: 400;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Medium%20Italic.woff2') format('woff2');
+      font-weight: 500;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Bold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Bold%20Italic.woff2') format('woff2');
+      font-weight: 600;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-condensed';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Condensed%20Black%20Italic.woff2') format('woff2');
+      font-weight: 900;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Hairline.woff2') format('woff2');
+      font-weight: 100;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Hairline%20Italic.woff2') format('woff2');
+      font-weight: 100;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Regular%20Italic.woff2') format('woff2');
+      font-weight: 400;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Medium%20Italic.woff2') format('woff2');
+      font-weight: 500;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Bold.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Bold%20Italic.woff2') format('woff2');
+      font-weight: 600;
+      font-style: italic;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: 'transducer-extended';
+      src: url('https://raw.githubusercontent.com/valleetim04/nhl-post-maker/main/media/fonts/Transducer%20Extended%20Black%20Italic.woff2') format('woff2');
+      font-weight: 900;
+      font-style: italic;
+      font-display: block;
+    }`;
+    const FONT_PRELOAD_SPECS = [
+      "normal 100 32px transducer",
+      "italic 100 32px transducer",
+      "normal 400 32px transducer",
+      "italic 400 32px transducer",
+      "normal 500 32px transducer",
+      "italic 500 32px transducer",
+      "normal 600 32px transducer",
+      "italic 600 32px transducer",
+      "normal 900 32px transducer",
+      "italic 900 32px transducer",
+      "normal 100 32px transducer-condensed",
+      "italic 100 32px transducer-condensed",
+      "normal 400 32px transducer-condensed",
+      "italic 400 32px transducer-condensed",
+      "normal 500 32px transducer-condensed",
+      "italic 500 32px transducer-condensed",
+      "normal 600 32px transducer-condensed",
+      "italic 600 32px transducer-condensed",
+      "normal 900 32px transducer-condensed",
+      "italic 900 32px transducer-condensed",
+      "normal 100 32px transducer-extended",
+      "italic 100 32px transducer-extended",
+      "normal 400 32px transducer-extended",
+      "italic 400 32px transducer-extended",
+      "normal 500 32px transducer-extended",
+      "italic 500 32px transducer-extended",
+      "normal 600 32px transducer-extended",
+      "italic 600 32px transducer-extended",
+      "normal 900 32px transducer-extended",
+      "italic 900 32px transducer-extended"
+    ];
+    let typekitCssPromise = null;
+
+    const els = {
+      customModeToggle: document.getElementById("customModeToggle"),
+      automaticConfig: document.getElementById("automaticConfig"),
+      customPanel: document.getElementById("customPanel"),
+      gameDate: document.getElementById("gameDate"),
+      loadGamesBtn: document.getElementById("loadGamesBtn"),
+      gameSelect: document.getElementById("gameSelect"),
+      uploadedImageTools: document.getElementById("uploadedImageTools"),
+      customShowState: document.getElementById("customShowState"),
+      customStateText: document.getElementById("customStateText"),
+      customShowSeries: document.getElementById("customShowSeries"),
+      customSeriesText: document.getElementById("customSeriesText"),
+      customShowDate: document.getElementById("customShowDate"),
+      customDate: document.getElementById("customDate"),
+      customAwayScore: document.getElementById("customAwayScore"),
+      customHomeScore: document.getElementById("customHomeScore"),
+      customShowAwayLogo: document.getElementById("customShowAwayLogo"),
+      customAwayLogoTeam: document.getElementById("customAwayLogoTeam"),
+      customShowHomeLogo: document.getElementById("customShowHomeLogo"),
+      customHomeLogoTeam: document.getElementById("customHomeLogoTeam"),
+      customAwayLogoUpload: document.getElementById("customAwayLogoUpload"),
+      customHomeLogoUpload: document.getElementById("customHomeLogoUpload"),
+      customAwayLogoOffset: document.getElementById("customAwayLogoOffset"),
+      customHomeLogoOffset: document.getElementById("customHomeLogoOffset"),
+      customShowAwayAbbrev: document.getElementById("customShowAwayAbbrev"),
+      customAwayAbbrev: document.getElementById("customAwayAbbrev"),
+      customShowHomeAbbrev: document.getElementById("customShowHomeAbbrev"),
+      customHomeAbbrev: document.getElementById("customHomeAbbrev"),
+      customShowAwayName: document.getElementById("customShowAwayName"),
+      customAwayName: document.getElementById("customAwayName"),
+      customShowHomeName: document.getElementById("customShowHomeName"),
+      customHomeName: document.getElementById("customHomeName"),
+      customAwayScorers: document.getElementById("customAwayScorers"),
+      customHomeScorers: document.getElementById("customHomeScorers"),
+      customHideAllScorers: document.getElementById("customHideAllScorers"),
+      panelToolboxSlot: document.getElementById("panelToolboxSlot"),
+      responsiveToolboxSlot: document.getElementById("responsiveToolboxSlot"),
+      backgroundInput: document.getElementById("backgroundInput"),
+      bgOpacity: document.getElementById("bgOpacity"),
+      bgPosX: document.getElementById("bgPosX"),
+      bgPosY: document.getElementById("bgPosY"),
+      bgZoom: document.getElementById("bgZoom"),
+      bgPosXValue: document.getElementById("bgPosXValue"),
+      bgPosYValue: document.getElementById("bgPosYValue"),
+      bgZoomValue: document.getElementById("bgZoomValue"),
+      imageCreditInput: document.getElementById("imageCreditInput"),
+      logoMode: document.getElementById("logoMode"),
+      renderBtn: document.getElementById("renderBtn"),
+      downloadBtn: document.getElementById("downloadBtn"),
+      status: document.getElementById("status"),
+      previewShell: document.getElementById("previewShell"),
+      post: document.getElementById("post"),
+      finalBadge: document.getElementById("finalBadge"),
+      seriesMeta: document.getElementById("seriesMeta"),
+      headerMark: document.getElementById("headerMark"),
+      postDate: document.getElementById("postDate"),
+      awayBlock: document.getElementById("awayBlock"),
+      homeBlock: document.getElementById("homeBlock"),
+      awayLogo: document.getElementById("awayLogo"),
+      homeLogo: document.getElementById("homeLogo"),
+      awayAbbrev: document.getElementById("awayAbbrev"),
+      homeAbbrev: document.getElementById("homeAbbrev"),
+      awayName: document.getElementById("awayName"),
+      homeName: document.getElementById("homeName"),
+      awayScore: document.getElementById("awayScore"),
+      homeScore: document.getElementById("homeScore"),
+      awayScorersCard: document.getElementById("awayScorersCard"),
+      homeScorersCard: document.getElementById("homeScorersCard"),
+      awayScorersAbbrev: document.getElementById("awayScorersAbbrev"),
+      homeScorersAbbrev: document.getElementById("homeScorersAbbrev"),
+      awayGoals: document.getElementById("awayGoals"),
+      homeGoals: document.getElementById("homeGoals"),
+      imageCredit: document.getElementById("imageCredit"),
+      footerGameId: document.getElementById("footerGameId")
+    };
+
+    const state = {
+      games: [],
+      selectedGame: null,
+      currentLanding: null,
+      teamAssets: new Map(),
+      playerAssets: new Map(),
+      imageCache: new Map(),
+      generatedAtLeastOnce: false,
+      customMode: false,
+      customSeeded: false,
+      customAwayLogoDataUrl: "",
+      customHomeLogoDataUrl: "",
+      backgroundImageDataUrl: "",
+      bgPositionX: 50,
+      bgPositionY: 50,
+      bgZoom: 103
+    };
+
+    init();
+
+    async function init() {
+      const savedCustomPreferences = readCustomPreferencesFromStorage();
+
+      els.gameDate.value = getLocalDateString();
+      fitPreview();
+      updateBackgroundPosition();
+      updateImageCredit();
+      syncResponsiveToolboxPlacement();
+      window.addEventListener("resize", () => {
+        fitPreview();
+        syncResponsiveToolboxPlacement();
+      });
+
+      els.loadGamesBtn.addEventListener("click", loadGamesForSelectedDate);
+      els.renderBtn.addEventListener("click", () => state.customMode ? renderCustomMode() : renderSelectedGame());
+      els.downloadBtn.addEventListener("click", downloadPng);
+      els.customModeToggle.addEventListener("change", () => setCustomMode(els.customModeToggle.checked));
+      els.gameSelect.addEventListener("change", () => {
+        state.selectedGame = state.games.find(g => String(getGameId(g)) === els.gameSelect.value) || null;
+      });
+
+      els.backgroundInput.addEventListener("change", handleBackgroundUpload);
+      els.bgOpacity.addEventListener("input", () => {
+        els.post.style.setProperty("--bg-opacity", els.bgOpacity.value);
+        saveCustomPreferences();
+      });
+      els.bgPosX.addEventListener("input", () => {
+        updateBackgroundPosition();
+        saveCustomPreferences();
+      });
+      els.bgPosY.addEventListener("input", () => {
+        updateBackgroundPosition();
+        saveCustomPreferences();
+      });
+      els.bgZoom.addEventListener("input", () => {
+        updateBackgroundPosition();
+        saveCustomPreferences();
+      });
+      els.imageCreditInput.addEventListener("input", () => {
+        updateImageCredit();
+        saveCustomPreferences();
+      });
+
+      if (els.customDate) els.customDate.value = getLocalDateString();
+      bindCustomModeInputs();
+      if (els.customAwayLogoUpload) els.customAwayLogoUpload.addEventListener("change", event => handleCustomLogoUpload(event, "away"));
+      if (els.customHomeLogoUpload) els.customHomeLogoUpload.addEventListener("change", event => handleCustomLogoUpload(event, "home"));
+
+
+      preloadTransducerFonts().catch(error => {
+        console.warn("Font preload warning:", error);
+      });
+
+      try {
+        setStatus("Loading team and player assets...");
+        await Promise.all([loadTeamAssets(), loadPlayerAssets()]);
+        populateCustomTeamOptions();
+        els.gameDate.value = getLocalDateString();
+        if (els.customDate) els.customDate.value = getLocalDateString();
+
+        applyCustomPreferences(savedCustomPreferences);
+
+        if (savedCustomPreferences?.customMode) {
+          els.customModeToggle.checked = true;
+          state.customSeeded = true;
+          setCustomMode(true);
+          setStatus("Custom mode restored from this browser.", "success");
+          return;
+        }
+
+        await loadGamesForSelectedDate();
+        if (state.selectedGame) {
+          await renderSelectedGame();
+        }
+      } catch (error) {
+        console.error(error);
+        setStatus("Some assets could not be loaded. The app can still use NHL API defaults where possible.", "error");
+      }
+    }
+
+    function syncResponsiveToolboxPlacement() {
+      const shouldMoveBelowPreview = window.matchMedia("(max-width: 1100px)").matches;
+
+      if (shouldMoveBelowPreview) {
+        if (els.uploadedImageTools.parentElement !== els.responsiveToolboxSlot) {
+          els.responsiveToolboxSlot.appendChild(els.uploadedImageTools);
+        }
+      } else if (els.uploadedImageTools.parentElement !== els.panelToolboxSlot.parentElement) {
+        els.panelToolboxSlot.after(els.uploadedImageTools);
+      }
+    }
+
+    function fitPreview() {
+      const width = els.previewShell.clientWidth;
+      const scale = Math.max(0.1, width / 1080);
+      document.documentElement.style.setProperty("--preview-scale", scale);
+      els.previewShell.style.height = `${1080 * scale}px`;
+    }
+
+    function getLocalDateString(date = new Date()) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+
+    function updateBackgroundPosition() {
+      const x = Math.max(0, Math.min(100, Number(els.bgPosX?.value ?? 50)));
+      const y = Math.max(0, Math.min(100, Number(els.bgPosY?.value ?? 50)));
+      const zoom = Math.max(100, Math.min(180, Number(els.bgZoom?.value ?? 103)));
+
+      state.bgPositionX = x;
+      state.bgPositionY = y;
+      state.bgZoom = zoom;
+
+      if (els.bgPosXValue) els.bgPosXValue.textContent = `${x}%`;
+      if (els.bgPosYValue) els.bgPosYValue.textContent = `${y}%`;
+      if (els.bgZoomValue) els.bgZoomValue.textContent = `${zoom}%`;
+
+      els.post.style.setProperty("--bg-pos-x", `${x}%`);
+      els.post.style.setProperty("--bg-pos-y", `${y}%`);
+      els.post.style.setProperty("--bg-zoom", (zoom / 100).toFixed(2));
+    }
+
+    function updateImageCredit() {
+      const credit = String(els.imageCreditInput?.value || "").trim();
+      els.imageCredit.textContent = credit ? `Photo credit : ${credit}` : "";
+    }
+
+    async function preloadTransducerFonts() {
+      if (!(document.fonts && typeof document.fonts.load === "function")) return;
+      await Promise.all(FONT_PRELOAD_SPECS.map(spec => document.fonts.load(spec).catch(() => null)));
+      await document.fonts.ready;
+    }
+
+    async function getTypekitCssText() {
+      return `${LOCAL_FONT_FACE_CSS}
+#post, #post * {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}`;
+    }
+
+    async function loadJson(url, options = {}) {
+      const {
+        proxyFallback = false,
+        cacheKey = url,
+        ttlMs = CACHE_TTL_MS,
+        forceRefresh = false
+      } = options;
+
+      if (!forceRefresh) {
+        const cached = getCachedJson(cacheKey, ttlMs);
+        if (cached !== null) return cached;
+      }
+
+      const data = await fetchJsonSmart(url, { proxyFallback });
+      setCachedJson(cacheKey, data);
+      return data;
+    }
+
+    async function fetchJsonSmart(url, { proxyFallback = false } = {}) {
+      return fetchJsonOnce(url, 12000);
+    }
+
+    async function fetchJsonOnce(url, timeoutMs = 9000) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+      try {
+        const response = await fetch(url, {
+          cache: "no-store",
+          signal: controller.signal
+        });
+
+        if (!response.ok) {
+          throw new Error(`Request failed: ${response.status} ${url}`);
+        }
+
+        return await response.json();
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    function getCachedJson(key, ttlMs = CACHE_TTL_MS) {
+      try {
+        const raw = localStorage.getItem(`nhl-post-cache::${key}`);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || !parsed.savedAt || !("data" in parsed)) return null;
+        if (Date.now() - parsed.savedAt > ttlMs) return null;
+        return parsed.data;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function setCachedJson(key, data) {
+      try {
+        localStorage.setItem(`nhl-post-cache::${key}`, JSON.stringify({ savedAt: Date.now(), data }));
+      } catch (error) {
+        // Ignore storage quota issues.
+      }
+    }
+
+    function asArray(payload) {
+      if (Array.isArray(payload)) return payload;
+      if (Array.isArray(payload?.data)) return payload.data;
+      if (Array.isArray(payload?.items)) return payload.items;
+      if (Array.isArray(payload?.rows)) return payload.rows;
+      return [];
+    }
+
+    function normalizeRecord(record) {
+      const normalized = {};
+      for (const [key, value] of Object.entries(record || {})) {
+        normalized[String(key).trim().toLowerCase()] = value;
+      }
+      return normalized;
+    }
+
+    async function loadTeamAssets() {
+      const payload = await loadJson(TEAM_ASSETS_URL, { cacheKey: "team-assets", ttlMs: 1000 * 60 * 60 * 12 });
+      const rows = asArray(payload);
+
+      state.teamAssets.clear();
+
+      for (const row of rows) {
+        const item = normalizeRecord(row);
+        const abv = String(item.teamabreviation || item.teamabbreviation || item.abbrev || "").toUpperCase().trim();
+        if (abv) state.teamAssets.set(abv, item);
+      }
+    }
+
+    async function loadPlayerAssets() {
+      const payload = await loadJson(PLAYER_ASSETS_URL, { cacheKey: "player-assets", ttlMs: 1000 * 60 * 60 * 12 });
+      const rows = asArray(payload);
+
+      state.playerAssets.clear();
+
+      for (const row of rows) {
+        const item = normalizeRecord(row);
+        const id = String(item.playerid || item.id || "").trim();
+        if (id) state.playerAssets.set(id, item);
+      }
+    }
+
+    async function loadGamesForSelectedDate() {
+      const date = els.gameDate.value || getLocalDateString();
+
+      setStatus(`Loading games for ${date}...`);
+      els.gameSelect.innerHTML = `<option value="">Loading...</option>`;
+
+      try {
+        const data = await loadNhlDate(date);
+        state.games = flattenGames(data);
+        populateGameSelect(state.games, date);
+
+        if (state.games.length) {
+          state.selectedGame = state.games[0];
+          els.gameSelect.value = String(getGameId(state.selectedGame));
+          setStatus(`${state.games.length} game(s) loaded for ${date}.`, "success");
+        } else {
+          state.selectedGame = null;
+          setStatus(`No NHL games found for ${date}.`, "error");
+        }
+      } catch (error) {
+        console.error(error);
+        state.games = [];
+        state.selectedGame = null;
+        els.gameSelect.innerHTML = `<option value="">Unable to load games</option>`;
+        setStatus("Unable to load games through your Cloudflare Worker. Test the Worker URL directly, then try again.", "error");
+      }
+    }
+
+    async function loadNhlDate(date) {
+      /*
+        Score endpoint is ideal because it returns the games for one date.
+        Schedule endpoint is kept as a fallback because the NHL Web API is not formally documented.
+      */
+      const scoreUrl = `${MY_NHL_PROXY}/score/${date}`;
+
+      try {
+        return await loadJson(scoreUrl, { cacheKey: `score-${date}`, ttlMs: 1000 * 60 * 10 });
+      } catch (firstError) {
+        console.warn("Score endpoint failed. Trying schedule endpoint.", firstError);
+        const scheduleUrl = `${MY_NHL_PROXY}/schedule/${date}`;
+        return loadJson(scheduleUrl, { cacheKey: `schedule-${date}`, ttlMs: 1000 * 60 * 10 });
+      }
+    }
+
+    function flattenGames(data) {
+      if (Array.isArray(data?.games)) return data.games;
+
+      const gameWeekGames = (data?.gameWeek || [])
+        .flatMap(day => Array.isArray(day?.games) ? day.games : []);
+      if (gameWeekGames.length) return gameWeekGames;
+
+      const dateGames = (data?.dates || [])
+        .flatMap(day => Array.isArray(day?.games) ? day.games : []);
+      if (dateGames.length) return dateGames;
+
+      return [];
+    }
+
+    function populateGameSelect(games, date) {
+      if (!games.length) {
+        els.gameSelect.innerHTML = `<option value="">No games on ${date}</option>`;
+        return;
+      }
+
+      els.gameSelect.innerHTML = games.map(game => {
+        const id = getGameId(game);
+        const away = getTeamAbbrev(game.awayTeam);
+        const home = getTeamAbbrev(game.homeTeam);
+        const stateText = getGameStateText(game);
+        const score = hasScore(game)
+          ? ` — ${getTeamScore(game.awayTeam)}-${getTeamScore(game.homeTeam)}`
+          : "";
+        return `<option value="${escapeHtml(id)}">${escapeHtml(away)} @ ${escapeHtml(home)}${score} — ${escapeHtml(stateText)}</option>`;
+      }).join("");
+    }
+
+    function getGameId(game) {
+      return game?.id || game?.gamePk || game?.gameId || "";
+    }
+
+    function hasScore(game) {
+      return typeof game?.awayTeam?.score === "number" || typeof game?.homeTeam?.score === "number";
+    }
+
+    function getGameStateText(game) {
+      const state = game?.gameState || game?.gameStatus?.state || game?.status?.abstractGameState || "";
+      const normalized = String(state).toUpperCase();
+
+      if (["OFF", "FINAL"].includes(normalized)) return "Final";
+      if (["LIVE", "CRIT"].includes(normalized)) return "Live";
+      if (["PRE", "FUT"].includes(normalized)) return "Upcoming";
+      return normalized || "Scheduled";
+    }
+
+    function isCompletedGame(game) {
+      const state = String(game?.gameState || game?.gameStatus?.state || game?.status?.abstractGameState || "").toUpperCase();
+      return ["OFF", "FINAL"].includes(state);
+    }
+
+    function getGameStartTimeMs(game) {
+      const raw = game?.startTimeUTC || game?.gameDate || game?.gameTimeUTC || game?.startTime || "";
+      const parsed = Date.parse(raw);
+      return Number.isFinite(parsed) ? parsed : Number(getGameId(game)) || 0;
+    }
+
+    function getDateOffsetString(offsetDays = 0) {
+      const date = new Date();
+      date.setDate(date.getDate() - offsetDays);
+      return getLocalDateString(date);
+    }
+
+    async function loadLatestCompletedGameByDefault() {
+      setStatus("Finding latest completed game...");
+
+      for (let offset = 0; offset <= 30; offset++) {
+        const date = getDateOffsetString(offset);
+
+        try {
+          const data = await loadNhlDate(date);
+          const games = flattenGames(data);
+          const completedGames = games
+            .filter(isCompletedGame)
+            .sort((a, b) => getGameStartTimeMs(b) - getGameStartTimeMs(a));
+
+          if (!completedGames.length) continue;
+
+          const latestCompletedGame = completedGames[0];
+
+          els.gameDate.value = date;
+          state.games = games;
+          populateGameSelect(state.games, date);
+          state.selectedGame = latestCompletedGame;
+          els.gameSelect.value = String(getGameId(latestCompletedGame));
+
+          await renderSelectedGame();
+          return;
+        } catch (error) {
+          console.warn(`Unable to check completed games for ${date}.`, error);
+        }
+      }
+
+      await loadGamesForSelectedDate();
+    }
+
+    function firstDefinedValue(...values) {
+      for (const value of values) {
+        const raw = String(value || "").trim();
+        if (raw) return raw;
+      }
+      return "";
+    }
+
+    function parseHexToRgb(hex) {
+      const clean = ensureHex(hex).replace('#', '');
+      const expanded = clean.length === 3 ? clean.split('').map(c => c + c).join('') : clean;
+      const num = parseInt(expanded, 16);
+      return {
+        r: (num >> 16) & 255,
+        g: (num >> 8) & 255,
+        b: num & 255
+      };
+    }
+
+    function rgbToHex(r, g, b) {
+      return '#' + [r, g, b].map(v => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0')).join('').toUpperCase();
+    }
+
+    function relativeLuminance(hex) {
+      const { r, g, b } = parseHexToRgb(hex);
+      return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+    }
+
+    function shiftHexToward(hex, target, amount) {
+      const from = parseHexToRgb(hex);
+      const to = parseHexToRgb(target);
+      return rgbToHex(
+        from.r + (to.r - from.r) * amount,
+        from.g + (to.g - from.g) * amount,
+        from.b + (to.b - from.b) * amount
+      );
+    }
+
+    function deriveSecondaryColor(primaryHex) {
+      const luminance = relativeLuminance(primaryHex);
+      return luminance > 0.62
+        ? shiftHexToward(primaryHex, '#111111', 0.42)
+        : shiftHexToward(primaryHex, '#FFFFFF', 0.38);
+    }
+
+    function getSecondaryTeamColor(asset, primaryHex) {
+      const raw = firstDefinedValue(
+        asset.teamcolor2,
+        asset.secondarycolor,
+        asset.secondarycolour,
+        asset.secondary,
+        asset.teamsecondarycolor,
+        asset.teamsecondarycolour,
+        asset.color2,
+        asset.colour2,
+        asset.accentcolor,
+        asset.accentcolour
+      );
+
+      const resolved = raw ? ensureHex(raw) : deriveSecondaryColor(primaryHex);
+      return resolved.toLowerCase() === String(primaryHex).toLowerCase()
+        ? deriveSecondaryColor(primaryHex)
+        : resolved;
+    }
+
+    function deriveTertiaryColor(primaryHex, secondaryHex) {
+      const luminance = relativeLuminance(secondaryHex);
+      const candidate = luminance > 0.62
+        ? shiftHexToward(secondaryHex, '#111111', 0.18)
+        : shiftHexToward(secondaryHex, '#FFFFFF', 0.24);
+
+      if (candidate.toLowerCase() === String(primaryHex).toLowerCase() || candidate.toLowerCase() === String(secondaryHex).toLowerCase()) {
+        return shiftHexToward(primaryHex, secondaryHex, 0.5);
+      }
+      return candidate;
+    }
+
+    function getTertiaryTeamColor(asset, primaryHex, secondaryHex) {
+      const raw = firstDefinedValue(
+        asset.teamcolor3,
+        asset.tertiarycolor,
+        asset.tertiarycolour,
+        asset.tertiary,
+        asset.teamtertiarycolor,
+        asset.teamtertiarycolour,
+        asset.color3,
+        asset.colour3,
+        asset.accentcolor2,
+        asset.accentcolour2
+      );
+
+      const resolved = raw ? ensureHex(raw) : deriveTertiaryColor(primaryHex, secondaryHex);
+      if (resolved.toLowerCase() === String(primaryHex).toLowerCase() || resolved.toLowerCase() == String(secondaryHex).toLowerCase()) {
+        return deriveTertiaryColor(primaryHex, secondaryHex);
+      }
+      return resolved;
+    }
+
+
+
+    function readCustomPreferencesFromStorage() {
+      try {
+        const raw = localStorage.getItem(CUSTOM_PREFS_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch (error) {
+        console.warn("Unable to read custom preferences:", error);
+        return null;
+      }
+    }
+
+    function saveCustomPreferences() {
+      try {
+        const values = {};
+        getCustomPreferenceInputs().forEach(input => {
+          if (!input || !input.id) return;
+          if (input.type === "checkbox") {
+            values[input.id] = input.checked;
+          } else {
+            values[input.id] = input.value;
+          }
+        });
+
+        const payload = {
+          version: 1,
+          savedAt: Date.now(),
+          customMode: Boolean(els.customModeToggle?.checked),
+          values,
+          customAwayLogoDataUrl: state.customAwayLogoDataUrl || "",
+          customHomeLogoDataUrl: state.customHomeLogoDataUrl || "",
+          backgroundImageDataUrl: state.backgroundImageDataUrl || ""
+        };
+
+        localStorage.setItem(CUSTOM_PREFS_KEY, JSON.stringify(payload));
+      } catch (error) {
+        console.warn("Unable to save custom preferences. The stored images may be too large for this browser.", error);
+      }
+    }
+
+    function applyCustomPreferences(preferences) {
+      if (!preferences || typeof preferences !== "object") return;
+
+      const values = preferences.values || {};
+      getCustomPreferenceInputs().forEach(input => {
+        if (!input || !input.id || !(input.id in values)) return;
+        if (input.type === "checkbox") {
+          input.checked = Boolean(values[input.id]);
+        } else {
+          input.value = values[input.id] ?? "";
+        }
+      });
+
+      state.customAwayLogoDataUrl = preferences.customAwayLogoDataUrl || "";
+      state.customHomeLogoDataUrl = preferences.customHomeLogoDataUrl || "";
+      state.backgroundImageDataUrl = preferences.backgroundImageDataUrl || "";
+
+      if (state.backgroundImageDataUrl) {
+        const safeUrl = state.backgroundImageDataUrl.replace(/"/g, "%22");
+        els.post.style.setProperty("--bg-image", `url("${safeUrl}")`);
+      }
+
+      updateBackgroundPosition();
+      updateImageCredit();
+    }
+
+    function getCustomPreferenceInputs() {
+      return [
+        els.customShowState,
+        els.customStateText,
+        els.customShowSeries,
+        els.customSeriesText,
+        els.customShowDate,
+        els.customDate,
+        els.customAwayScore,
+        els.customHomeScore,
+        els.customShowAwayLogo,
+        els.customAwayLogoTeam,
+        els.customAwayLogoOffset,
+        els.customShowHomeLogo,
+        els.customHomeLogoTeam,
+        els.customHomeLogoOffset,
+        els.customShowAwayAbbrev,
+        els.customAwayAbbrev,
+        els.customShowHomeAbbrev,
+        els.customHomeAbbrev,
+        els.customShowAwayName,
+        els.customAwayName,
+        els.customShowHomeName,
+        els.customHomeName,
+        els.customAwayScorers,
+        els.customHomeScorers,
+        els.customHideAllScorers,
+        els.bgOpacity,
+        els.bgPosX,
+        els.bgPosY,
+        els.bgZoom,
+        els.imageCreditInput
+      ].filter(Boolean);
+    }
+
+    async function handleCustomLogoUpload(event, side) {
+      const file = event?.target?.files?.[0];
+      if (!file) {
+        if (side === "away") {
+          state.customAwayLogoDataUrl = "";
+        } else {
+          state.customHomeLogoDataUrl = "";
+        }
+        saveCustomPreferences();
+        if (state.customMode && state.generatedAtLeastOnce) {
+          renderCustomMode();
+        }
+        return;
+      }
+
+      const dataUrl = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result || ""));
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+
+      if (side === "away") {
+        state.customAwayLogoDataUrl = dataUrl;
+      } else {
+        state.customHomeLogoDataUrl = dataUrl;
+      }
+
+      saveCustomPreferences();
+
+      if (state.customMode && state.generatedAtLeastOnce) {
+        renderCustomMode();
+      }
+    }
+
+    function bindCustomModeInputs() {
+      const customInputs = [
+        els.customStateText,
+        els.customShowState,
+        els.customSeriesText,
+        els.customShowSeries,
+        els.customDate,
+        els.customShowDate,
+        els.customAwayScore,
+        els.customHomeScore,
+        els.customShowAwayLogo,
+        els.customAwayLogoTeam,
+        els.customShowHomeLogo,
+        els.customHomeLogoTeam,
+        els.customAwayLogoOffset,
+        els.customHomeLogoOffset,
+        els.customShowAwayAbbrev,
+        els.customAwayAbbrev,
+        els.customShowHomeAbbrev,
+        els.customHomeAbbrev,
+        els.customShowAwayName,
+        els.customAwayName,
+        els.customShowHomeName,
+        els.customHomeName,
+        els.customAwayScorers,
+        els.customHomeScorers,
+        els.customHideAllScorers
+      ].filter(Boolean);
+
+      customInputs.forEach(input => {
+        const eventName = input.tagName === "SELECT" || input.type === "checkbox" ? "change" : "input";
+        input.addEventListener(eventName, () => {
+          saveCustomPreferences();
+          if (state.customMode && state.generatedAtLeastOnce) {
+            renderCustomMode();
+          }
+        });
+      });
+    }
+
+    function setCustomMode(enabled) {
+      state.customMode = Boolean(enabled);
+      if (els.customModeToggle) els.customModeToggle.checked = state.customMode;
+
+      if (els.automaticConfig) els.automaticConfig.hidden = state.customMode;
+      if (els.customPanel) els.customPanel.hidden = !state.customMode;
+      els.post.classList.toggle("custom-mode", state.customMode);
+
+      if (state.customMode) {
+        if (!state.customSeeded) {
+          seedCustomFormFromPreview();
+          state.customSeeded = true;
+        }
+        renderCustomMode();
+      } else if (state.currentLanding) {
+        renderPost(state.currentLanding);
+      }
+
+      saveCustomPreferences();
+    }
+
+    function populateCustomTeamOptions() {
+      const selects = [els.customAwayLogoTeam, els.customHomeLogoTeam].filter(Boolean);
+      const items = Array.from(state.teamAssets.keys()).sort();
+
+      selects.forEach(select => {
+        const current = select.value;
+        select.innerHTML = `<option value="">None</option>` + items.map(abv => `<option value="${escapeHtml(abv)}">${escapeHtml(abv)}</option>`).join("");
+        if (items.includes(current)) select.value = current;
+      });
+    }
+
+    function seedCustomFormFromPreview() {
+      if (els.customStateText) ensureSelectHasOption(els.customStateText, (els.finalBadge.textContent || "Final").trim() || "Final");
+      if (els.customSeriesText) els.customSeriesText.value = String(els.seriesMeta.textContent || "").trim().slice(0, 25);
+      if (els.customDate) els.customDate.value = state.currentLanding?.gameDate || els.gameDate.value || getLocalDateString();
+
+      if (els.customAwayScore) els.customAwayScore.value = sanitizeScoreInput(els.awayScore.textContent || "0");
+      if (els.customHomeScore) els.customHomeScore.value = sanitizeScoreInput(els.homeScore.textContent || "0");
+
+      const awayAbbrev = String(els.awayAbbrev.textContent || "").trim().toUpperCase();
+      const homeAbbrev = String(els.homeAbbrev.textContent || "").trim().toUpperCase();
+
+      if (els.customAwayLogoTeam && state.teamAssets.has(awayAbbrev)) els.customAwayLogoTeam.value = awayAbbrev;
+      if (els.customHomeLogoTeam && state.teamAssets.has(homeAbbrev)) els.customHomeLogoTeam.value = homeAbbrev;
+
+      if (els.customAwayAbbrev) els.customAwayAbbrev.value = awayAbbrev.slice(0, 4);
+      if (els.customHomeAbbrev) els.customHomeAbbrev.value = homeAbbrev.slice(0, 4);
+      if (els.customAwayName) els.customAwayName.value = String(els.awayName.textContent || "").trim().slice(0, 25);
+      if (els.customHomeName) els.customHomeName.value = String(els.homeName.textContent || "").trim().slice(0, 25);
+
+      if (els.customAwayScorers) els.customAwayScorers.value = goalListToTextarea(els.awayGoals);
+      if (els.customHomeScorers) els.customHomeScorers.value = goalListToTextarea(els.homeGoals);
+    }
+
+    function goalListToTextarea(listEl) {
+      const rows = Array.from(listEl.querySelectorAll("li"));
+      const lines = [];
+
+      rows.forEach(row => {
+        if (row.classList.contains("empty-goals")) return;
+        const name = String(row.querySelector("span")?.textContent || row.textContent || "").trim();
+        const totalsRaw = String(row.querySelector("em")?.textContent || "").trim();
+        const totals = totalsRaw.replace(/^\(|\)$/g, "");
+        if (!name) return;
+        lines.push(totals ? `${name} / ${totals}` : name);
+      });
+
+      return lines.join("\n");
+    }
+
+    function ensureSelectHasOption(select, value) {
+      const normalized = String(value || "").trim();
+      if (!normalized) return;
+      const match = Array.from(select.options).find(option => option.value === normalized);
+      if (!match) {
+        const opt = document.createElement("option");
+        opt.value = normalized;
+        opt.textContent = normalized;
+        select.appendChild(opt);
+      }
+      select.value = normalized;
+    }
+
+    function sanitizeScoreInput(value) {
+      const clean = String(value || "").replace(/[^0-9]/g, "").slice(0, 3);
+      return clean || "0";
+    }
+
+    function getCustomTeamAsset(selectEl, fallbackAbbrev = "") {
+      const selected = String(selectEl?.value || "").trim().toUpperCase();
+      if (selected && state.teamAssets.has(selected)) return state.teamAssets.get(selected);
+      const fallback = String(fallbackAbbrev || "").trim().toUpperCase();
+      if (fallback && state.teamAssets.has(fallback)) return state.teamAssets.get(fallback);
+      return {};
+    }
+
+    function getCustomLogoUrl(asset, fallbackAbbrev = "") {
+      const explicit = proxifyAssetUrl(asset.teamlogodark || asset.teamlogolight || "");
+      if (explicit) return explicit;
+      return getFallbackLogoUrl(String(fallbackAbbrev || "").trim().toUpperCase(), "dark");
+    }
+
+    function setElementDisplay(el, show, displayValue = "") {
+      if (!el) return;
+      el.style.display = show ? displayValue : "none";
+    }
+
+    async function renderCustomMode() {
+      els.post.classList.add("custom-mode");
+
+      const awayAbbrev = String(els.customAwayAbbrev?.value || "").trim().toUpperCase().slice(0, 4);
+      const homeAbbrev = String(els.customHomeAbbrev?.value || "").trim().toUpperCase().slice(0, 4);
+
+      const awayAsset = getCustomTeamAsset(els.customAwayLogoTeam, awayAbbrev);
+      const homeAsset = getCustomTeamAsset(els.customHomeLogoTeam, homeAbbrev);
+
+      const awayColor = ensureHex(awayAsset.teamcolor1 || "275EFE");
+      const homeColor = ensureHex(homeAsset.teamcolor1 || "D62539");
+      const awaySecondaryColor = getSecondaryTeamColor(awayAsset, awayColor);
+      const homeSecondaryColor = getSecondaryTeamColor(homeAsset, homeColor);
+      const awayTertiaryColor = getTertiaryTeamColor(awayAsset, awayColor, awaySecondaryColor);
+      const homeTertiaryColor = getTertiaryTeamColor(homeAsset, homeColor, homeSecondaryColor);
+
+      els.post.style.setProperty("--away-color", awayColor);
+      els.post.style.setProperty("--home-color", homeColor);
+      els.post.style.setProperty("--away-color-2", awaySecondaryColor);
+      els.post.style.setProperty("--home-color-2", homeSecondaryColor);
+      els.post.style.setProperty("--away-color-3", awayTertiaryColor);
+      els.post.style.setProperty("--home-color-3", homeTertiaryColor);
+      els.post.style.setProperty("--away-color-banner", "rgba(0,0,0,.34)");
+      els.post.style.setProperty("--home-color-banner", "rgba(0,0,0,.34)");
+      els.post.style.setProperty("--away-color-glow", "rgba(0,0,0,.42)");
+      els.post.style.setProperty("--home-color-glow", "rgba(0,0,0,.42)");
+
+      els.awayBlock.style.setProperty("--team-color", awayColor);
+      els.awayBlock.style.setProperty("--team-color-soft", "rgba(0,0,0,.18)");
+      els.awayBlock.style.setProperty("--team-color-strong", "rgba(0,0,0,.28)");
+      els.homeBlock.style.setProperty("--team-color", homeColor);
+      els.homeBlock.style.setProperty("--team-color-soft", "rgba(0,0,0,.18)");
+      els.homeBlock.style.setProperty("--team-color-strong", "rgba(0,0,0,.28)");
+
+      const awayName = String(els.customAwayName?.value || awayAsset.teamcommonname || "Away Team").trim().slice(0, 25);
+      const homeName = String(els.customHomeName?.value || homeAsset.teamcommonname || "Home Team").trim().slice(0, 25);
+
+      els.awayAbbrev.textContent = awayAbbrev || "AWY";
+      els.homeAbbrev.textContent = homeAbbrev || "HME";
+      els.awayName.textContent = awayName || "Away Team";
+      els.homeName.textContent = homeName || "Home Team";
+      els.awayScore.textContent = sanitizeScoreInput(els.customAwayScore?.value);
+      els.homeScore.textContent = sanitizeScoreInput(els.customHomeScore?.value);
+
+      els.awayScorersAbbrev.textContent = awayAbbrev || "AWY";
+      els.homeScorersAbbrev.textContent = homeAbbrev || "HME";
+
+      setElementDisplay(els.finalBadge, els.customShowState?.checked !== false, "");
+      if (els.customShowState?.checked !== false) {
+        els.finalBadge.textContent = String(els.customStateText?.value || "Final").trim() || "Final";
+      } else {
+        els.finalBadge.textContent = "";
+      }
+
+      setElementDisplay(els.seriesMeta, els.customShowSeries?.checked !== false, "");
+      els.seriesMeta.textContent = els.customShowSeries?.checked !== false
+        ? String(els.customSeriesText?.value || "").trim().slice(0, 25)
+        : "";
+
+      setElementDisplay(els.postDate, els.customShowDate?.checked !== false, "");
+      els.postDate.textContent = els.customShowDate?.checked !== false
+        ? formatDisplayDate(els.customDate?.value || getLocalDateString())
+        : "";
+
+      const awayLogoWrap = els.awayLogo.closest(".team-logo-wrap");
+      const homeLogoWrap = els.homeLogo.closest(".team-logo-wrap");
+
+      const awayShowLogo = els.customShowAwayLogo?.checked !== false;
+      const homeShowLogo = els.customShowHomeLogo?.checked !== false;
+      const awayLogoUrl = awayShowLogo ? (state.customAwayLogoDataUrl || getCustomLogoUrl(awayAsset, awayAbbrev)) : "";
+      const homeLogoUrl = homeShowLogo ? (state.customHomeLogoDataUrl || getCustomLogoUrl(homeAsset, homeAbbrev)) : "";
+      const awayLogoOffset = state.customAwayLogoDataUrl ? Math.max(-140, Math.min(140, Number(els.customAwayLogoOffset?.value || 0))) : 0;
+      const homeLogoOffset = state.customHomeLogoDataUrl ? Math.max(-140, Math.min(140, Number(els.customHomeLogoOffset?.value || 0))) : 0;
+      els.post.style.setProperty("--away-logo-offset", `${awayLogoOffset}px`);
+      els.post.style.setProperty("--home-logo-offset", `${homeLogoOffset}px`);
+
+      if (awayShowLogo && awayLogoUrl) {
+        setElementDisplay(awayLogoWrap, true, "flex");
+        els.awayLogo.dataset.exportSrc = awayLogoUrl;
+        els.awayLogo.src = awayLogoUrl;
+      } else {
+        setElementDisplay(awayLogoWrap, false, "flex");
+        els.awayLogo.dataset.exportSrc = "";
+        els.awayLogo.removeAttribute("src");
+      }
+
+      if (homeShowLogo && homeLogoUrl) {
+        setElementDisplay(homeLogoWrap, true, "flex");
+        els.homeLogo.dataset.exportSrc = homeLogoUrl;
+        els.homeLogo.src = homeLogoUrl;
+      } else {
+        setElementDisplay(homeLogoWrap, false, "flex");
+        els.homeLogo.dataset.exportSrc = "";
+        els.homeLogo.removeAttribute("src");
+      }
+
+      setElementDisplay(els.awayAbbrev, els.customShowAwayAbbrev?.checked !== false, "");
+      setElementDisplay(els.homeAbbrev, els.customShowHomeAbbrev?.checked !== false, "");
+      setElementDisplay(els.awayName, els.customShowAwayName?.checked !== false, "");
+      setElementDisplay(els.homeName, els.customShowHomeName?.checked !== false, "");
+
+      const awayScorers = parseCustomScorers(els.customAwayScorers?.value);
+      const homeScorers = parseCustomScorers(els.customHomeScorers?.value);
+      const hideAllScorerCards = els.customHideAllScorers?.checked === true;
+
+      setElementDisplay(els.awayScorersCard, !hideAllScorerCards, "");
+      setElementDisplay(els.homeScorersCard, !hideAllScorerCards, "");
+
+      renderCustomGoalList(els.awayGoals, awayScorers, "full");
+      renderCustomGoalList(els.homeGoals, homeScorers, "full");
+
+      applyScorerDensity(
+        hideAllScorerCards ? [] : awayScorers,
+        hideAllScorerCards ? [] : homeScorers
+      );
+
+      els.footerGameId.textContent = "";
+      state.generatedAtLeastOnce = true;
+      setStatus("Custom visual generated successfully.", "success");
+    }
+
+    function parseCustomScorers(text) {
+      return String(text || "")
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(Boolean)
+        .map(line => {
+          const parts = line.split("/");
+          const namePart = parts.shift() || "";
+          const totalsPart = parts.join("/");
+          return {
+            name: String(namePart || "").trim(),
+            goals: String(totalsPart || "")
+              .split(",")
+              .map(item => item.trim())
+              .filter(Boolean)
+          };
+        })
+        .filter(item => item.name);
+    }
+
+    function renderCustomGoalList(listEl, scorers, mode = "full") {
+      if (mode === "hideCard") {
+        listEl.innerHTML = "";
+        return;
+      }
+
+      if (mode === "hideScorers") {
+        listEl.innerHTML = `<li class="empty-goals">&nbsp;</li>`;
+        return;
+      }
+
+      if (!scorers.length) {
+        listEl.innerHTML = `<li class="empty-goals">No goals</li>`;
+        return;
+      }
+
+      listEl.innerHTML = scorers.map(scorer => {
+        const totals = scorer.goals.join(", ");
+        return `
+          <li>
+            <span>${escapeHtml(scorer.name)}</span>
+            <em>${mode === "namesOnly" ? "" : (totals ? `(${escapeHtml(totals)})` : "")}</em>
+          </li>
+        `;
+      }).join("");
+    }
+
+    async function renderSelectedGame() {
+      if (state.customMode) {
+        await renderCustomMode();
+        return;
+      }
+
+      const gameId = els.gameSelect.value;
+      if (!gameId) {
+        setStatus("Choose a game first.", "error");
+        return;
+      }
+
+      setStatus(`Loading game ${gameId} details...`);
+
+      try {
+        const landing = await loadJson(`${MY_NHL_PROXY}/gamecenter/${gameId}/landing`, { cacheKey: `landing-${gameId}`, ttlMs: 1000 * 60 * 10 });
+        state.currentLanding = landing;
+        await renderPost(landing);
+        state.generatedAtLeastOnce = true;
+
+        const stateText = String(landing?.gameState || "").toUpperCase();
+        if (!["OFF", "FINAL"].includes(stateText)) {
+          setStatus("Visual generated, but this game does not appear to be final yet.", "error");
+        } else {
+          setStatus("Visual generated successfully.", "success");
+        }
+      } catch (error) {
+        console.error(error);
+        setStatus("Unable to load the selected game's details.", "error");
+      }
+    }
+
+    async function renderPost(landing) {
+      els.post.classList.remove("custom-mode");
+
+      const away = landing.awayTeam || {};
+      const home = landing.homeTeam || {};
+      const awayAbbrev = getTeamAbbrev(away);
+      const homeAbbrev = getTeamAbbrev(home);
+
+      const awayAsset = state.teamAssets.get(awayAbbrev) || {};
+      const homeAsset = state.teamAssets.get(homeAbbrev) || {};
+
+      const awayColor = ensureHex(awayAsset.teamcolor1 || away.color || "275EFE");
+      const homeColor = ensureHex(homeAsset.teamcolor1 || home.color || "D62539");
+      const awaySecondaryColor = getSecondaryTeamColor(awayAsset, awayColor);
+      const homeSecondaryColor = getSecondaryTeamColor(homeAsset, homeColor);
+      const awayTertiaryColor = getTertiaryTeamColor(awayAsset, awayColor, awaySecondaryColor);
+      const homeTertiaryColor = getTertiaryTeamColor(homeAsset, homeColor, homeSecondaryColor);
+
+      els.post.style.setProperty("--away-color", awayColor);
+      els.post.style.setProperty("--home-color", homeColor);
+      els.post.style.setProperty("--away-color-2", awaySecondaryColor);
+      els.post.style.setProperty("--home-color-2", homeSecondaryColor);
+      els.post.style.setProperty("--away-color-3", awayTertiaryColor);
+      els.post.style.setProperty("--home-color-3", homeTertiaryColor);
+      els.post.style.setProperty("--away-color-banner", hexToRgba(awayColor, .26));
+      els.post.style.setProperty("--home-color-banner", hexToRgba(homeColor, .26));
+      els.post.style.setProperty("--away-color-glow", hexToRgba(awayColor, .34));
+      els.post.style.setProperty("--home-color-glow", hexToRgba(homeColor, .34));
+
+      els.awayBlock.style.setProperty("--team-color", awayColor);
+      els.awayBlock.style.setProperty("--team-color-soft", hexToRgba(awayColor, .20));
+      els.awayBlock.style.setProperty("--team-color-strong", hexToRgba(awayColor, .44));
+      els.homeBlock.style.setProperty("--team-color", homeColor);
+      els.homeBlock.style.setProperty("--team-color-soft", hexToRgba(homeColor, .20));
+      els.homeBlock.style.setProperty("--team-color-strong", hexToRgba(homeColor, .44));
+
+      await Promise.all([
+        setTeamDisplay("away", away, awayAsset),
+        setTeamDisplay("home", home, homeAsset)
+      ]);
+
+      const livePeriodSnapshot = getLivePeriodSnapshot(landing);
+
+      els.awayScore.textContent = livePeriodSnapshot
+        ? String(livePeriodSnapshot.awayScore)
+        : getTeamScore(away);
+      els.homeScore.textContent = livePeriodSnapshot
+        ? String(livePeriodSnapshot.homeScore)
+        : getTeamScore(home);
+
+      els.awayScorersAbbrev.textContent = awayAbbrev;
+      els.homeScorersAbbrev.textContent = homeAbbrev;
+
+      const scorerGroups = collectGoalScorers(
+        landing,
+        livePeriodSnapshot ? livePeriodSnapshot.completedPeriodNumber : Infinity
+      );
+      renderGoalList(els.awayGoals, scorerGroups.get(awayAbbrev) || []);
+      renderGoalList(els.homeGoals, scorerGroups.get(homeAbbrev) || []);
+
+      els.finalBadge.textContent = livePeriodSnapshot
+        ? livePeriodSnapshot.label
+        : getFinalLabel(landing);
+      els.seriesMeta.textContent = getPlayoffHeaderText(landing, state.selectedGame);
+      applyScorerDensity(scorerGroups.get(awayAbbrev) || [], scorerGroups.get(homeAbbrev) || []);
+      els.postDate.textContent = formatDisplayDate(landing.gameDate || els.gameDate.value);
+      els.footerGameId.textContent = `Game ${landing.id || getGameId(state.selectedGame) || ""}`.trim();
+    }
+
+    async function setTeamDisplay(side, team, asset) {
+      const prefix = side === "away" ? "away" : "home";
+      const abbrEl = els[`${prefix}Abbrev`];
+      const nameEl = els[`${prefix}Name`];
+      const logoEl = els[`${prefix}Logo`];
+
+      const abv = getTeamAbbrev(team);
+      const commonName =
+        getDefault(team?.commonName)
+        || asset.teamcommonname
+        || getDefault(team?.placeName)
+        || abv;
+
+      abbrEl.textContent = abv;
+      nameEl.textContent = commonName;
+
+      const logoUrl = getLogoUrl(team, asset) || getFallbackLogoUrl(abv, "dark");
+      logoEl.dataset.exportSrc = logoUrl || "";
+      logoEl.alt = `${abv} logo`;
+      logoEl.onload = null;
+      logoEl.onerror = createLogoFallbackHandler(logoEl, abv, team, asset);
+      logoEl.src = logoUrl || "";
+    }
+
+    function getTeamAbbrev(team) {
+      return String(team?.abbrev || getDefault(team?.teamAbbrev) || team?.triCode || team?.abbreviation || "").toUpperCase();
+    }
+
+    function getTeamScore(team) {
+      return Number.isFinite(team?.score) ? String(team.score) : "0";
+    }
+
+    function getLogoUrl(team, asset) {
+      const mode = "dark";
+      let logoUrl = "";
+
+      if (mode === "dark") {
+        logoUrl = asset.teamlogodark || team?.darkLogo || team?.logo || asset.teamlogolight || "";
+      } else if (mode === "light") {
+        logoUrl = asset.teamlogolight || team?.logo || asset.teamlogodark || team?.darkLogo || "";
+      } else {
+        logoUrl = team?.logo || team?.darkLogo || asset.teamlogolight || asset.teamlogodark || "";
+      }
+
+      return proxifyAssetUrl(logoUrl);
+    }
+
+    function proxifyAssetUrl(url) {
+      const raw = String(url || "").trim();
+      if (!raw) return "";
+      if (raw.startsWith("data:")) return raw;
+      if (raw.startsWith(MY_NHL_PROXY)) return raw;
+      return `${MY_NHL_PROXY}/asset?url=${encodeURIComponent(raw)}`;
+    }
+
+    function createLogoFallbackHandler(logoEl, abv, team, asset) {
+      const attempts = Array.from(new Set([
+        getLogoUrl(team, asset),
+        proxifyAssetUrl(asset.teamlogolight),
+        proxifyAssetUrl(asset.teamlogodark),
+        proxifyAssetUrl(team?.logo),
+        proxifyAssetUrl(team?.darkLogo),
+        getFallbackLogoUrl(abv, "light"),
+        getFallbackLogoUrl(abv, "dark")
+      ].filter(Boolean)));
+
+      return function handleLogoError() {
+        const current = logoEl.dataset.exportSrc || logoEl.src;
+        const index = attempts.findIndex(url => url === current || logoEl.src === url);
+        const next = attempts[index + 1] || attempts.find(url => url !== current);
+        if (!next || next === current) {
+          logoEl.style.display = "none";
+          return;
+        }
+        logoEl.dataset.exportSrc = next;
+        logoEl.src = next;
+      };
+    }
+
+    function getFallbackLogoUrl(abv, mode = "light") {
+      const suffix = mode === "dark" ? "dark" : "light";
+      const rawUrl = abv ? `https://assets.nhle.com/logos/nhl/svg/${abv}_${suffix}.svg` : "";
+      return proxifyAssetUrl(rawUrl);
+    }
+
+    async function fetchImageAsDataUrl(url, proxyFallback = true) {
+      const normalized = String(url || "").trim();
+      if (!normalized) return "";
+      if (normalized.startsWith("data:")) return normalized;
+      if (state.imageCache.has(normalized)) return state.imageCache.get(normalized);
+
+      const target = normalized.startsWith("http") && !normalized.startsWith(MY_NHL_PROXY)
+        ? proxifyAssetUrl(normalized)
+        : normalized;
+
+      const blob = await fetchBlob(target);
+      const dataUrl = await blobToDataUrl(blob);
+      state.imageCache.set(normalized, dataUrl);
+      return dataUrl;
+    }
+
+    async function fetchBlob(url) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 12000);
+      try {
+        const response = await fetch(url, { cache: "force-cache", signal: controller.signal });
+        if (!response.ok) {
+          throw new Error(`Image request failed: ${response.status} ${url}`);
+        }
+        return response.blob();
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    function blobToDataUrl(blob) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(String(reader.result || ""));
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }
+
+    async function inlineImagesForExport(root) {
+      const images = Array.from(root.querySelectorAll("img"));
+
+      await Promise.all(images.map(async (img) => {
+        const preferred = img.dataset.exportSrc || img.getAttribute("src") || "";
+        if (!preferred || preferred.startsWith("data:")) return;
+        try {
+          img.src = await fetchImageAsDataUrl(preferred, true);
+        } catch (error) {
+          console.warn("Unable to inline image for export:", preferred, error);
+        }
+      }));
+    }
+
+    function collectGoalScorers(landing, maxPeriodNumber = Infinity) {
+      const groupedByTeam = new Map();
+      const periods = landing?.summary?.scoring || [];
+
+      for (const period of periods) {
+        const periodNumber = getScoringPeriodNumber(period);
+        if (Number.isFinite(maxPeriodNumber) && periodNumber > maxPeriodNumber) continue;
+
+        for (const goal of period?.goals || []) {
+          const teamAbbrev = String(getDefault(goal.teamAbbrev) || "").toUpperCase();
+          if (!teamAbbrev) continue;
+
+          if (!groupedByTeam.has(teamAbbrev)) {
+            groupedByTeam.set(teamAbbrev, new Map());
+          }
+
+          const playerId = String(goal.playerId || goal.scorerPlayerId || "");
+          const key = playerId || `${getDefault(goal.firstName)}-${getDefault(goal.lastName)}`;
+          const teamMap = groupedByTeam.get(teamAbbrev);
+
+          if (!teamMap.has(key)) {
+            teamMap.set(key, {
+              playerId,
+              name: formatGoalScorerName(goal),
+              goals: []
+            });
+          }
+
+          const currentTotal = goal.goalsToDate ?? goal.goals ?? goal.seasonTotal ?? "";
+          teamMap.get(key).goals.push(currentTotal);
+        }
+      }
+
+      const final = new Map();
+
+      for (const [teamAbbrev, playerMap] of groupedByTeam.entries()) {
+        final.set(teamAbbrev, Array.from(playerMap.values()));
+      }
+
+      return final;
+    }
+
+    function formatGoalScorerName(goal) {
+      const playerId = String(goal.playerId || "");
+      const playerAsset = state.playerAssets.get(playerId) || {};
+
+      const first =
+        getDefault(goal.firstName)
+        || playerAsset.playerfirstname
+        || "";
+
+      const last =
+        getDefault(goal.lastName)
+        || playerAsset.playerlastname
+        || getDefault(goal.name)
+        || playerAsset.playerfullname
+        || "Unknown";
+
+      const firstInitial = first ? `${String(first).trim().charAt(0)}.` : "";
+      return `${firstInitial} ${last}`.trim();
+    }
+
+    function isLiveGame(landing) {
+      const state = String(landing?.gameState || landing?.gameStatus?.state || "").toUpperCase();
+      return ["LIVE", "CRIT"].includes(state);
+    }
+
+    function getLivePeriodSnapshot(landing) {
+      if (!isLiveGame(landing)) return null;
+
+      const completedPeriodNumber = getLastCompletedPeriodNumber(landing);
+      const label = completedPeriodNumber > 0
+        ? getEndOfPeriodLabel(completedPeriodNumber, isPlayoffGame(landing, state.selectedGame))
+        : "Start of 1st";
+
+      const score = getScoreThroughPeriod(landing, completedPeriodNumber);
+
+      return {
+        completedPeriodNumber,
+        awayScore: score.awayScore,
+        homeScore: score.homeScore,
+        label
+      };
+    }
+
+    function getLastCompletedPeriodNumber(landing) {
+      const period = landing?.periodDescriptor || {};
+      const clock = landing?.clock || {};
+      const currentPeriodNumber = Number(period.number || period.periodNumber || 0);
+      const periodType = String(period.periodType || "").toUpperCase();
+
+      if (!Number.isFinite(currentPeriodNumber) || currentPeriodNumber <= 0) return 0;
+
+      if (periodType === "SO") {
+        return Math.max(0, currentPeriodNumber - 1);
+      }
+
+      if (clock.inIntermission === true || clock.intermission === true) {
+        return currentPeriodNumber;
+      }
+
+      return Math.max(0, currentPeriodNumber - 1);
+    }
+
+    function getEndOfPeriodLabel(periodNumber, isPlayoff = false) {
+      if (periodNumber === 1) return "End of 1st";
+      if (periodNumber === 2) return "End of 2nd";
+      if (periodNumber === 3) return "End of 3rd";
+
+      const overtimeNumber = periodNumber - 3;
+      if (overtimeNumber <= 1) {
+        return isPlayoff ? "End of OT 1" : "End of OT";
+      }
+
+      return `End of OT ${overtimeNumber}`;
+    }
+
+    function getScoreThroughPeriod(landing, maxPeriodNumber) {
+      const awayAbbrev = getTeamAbbrev(landing?.awayTeam || {});
+      const homeAbbrev = getTeamAbbrev(landing?.homeTeam || {});
+      const periods = landing?.summary?.scoring || [];
+
+      let awayScore = 0;
+      let homeScore = 0;
+
+      if (!Number.isFinite(maxPeriodNumber) || maxPeriodNumber <= 0) {
+        return { awayScore, homeScore };
+      }
+
+      for (const period of periods) {
+        const periodNumber = getScoringPeriodNumber(period);
+        if (periodNumber > maxPeriodNumber) continue;
+
+        for (const goal of period?.goals || []) {
+          const teamAbbrev = String(getDefault(goal.teamAbbrev) || "").toUpperCase();
+
+          if (teamAbbrev === awayAbbrev) {
+            awayScore += 1;
+          } else if (teamAbbrev === homeAbbrev) {
+            homeScore += 1;
+          }
+        }
+      }
+
+      return { awayScore, homeScore };
+    }
+
+    function getScoringPeriodNumber(period) {
+      const raw =
+        period?.periodDescriptor?.number
+        ?? period?.periodDescriptor?.periodNumber
+        ?? period?.period
+        ?? period?.periodNumber
+        ?? period?.number
+        ?? 0;
+
+      const parsed = Number(raw);
+      return Number.isFinite(parsed) ? parsed : 0;
+    }
+
+    function applyScorerDensity(awayScorers, homeScorers) {
+      const densityClasses = ["density-medium", "density-heavy", "density-extreme"];
+      els.post.classList.remove(...densityClasses);
+
+      const maxCount = Math.max(awayScorers.length, homeScorers.length, 0);
+      if (maxCount >= 11) {
+        els.post.classList.add("density-extreme");
+      } else if (maxCount >= 8) {
+        els.post.classList.add("density-heavy");
+      } else if (maxCount >= 6) {
+        els.post.classList.add("density-medium");
+      }
+    }
+
+    function renderGoalList(listEl, scorers) {
+      if (!scorers.length) {
+        listEl.innerHTML = `<li class="empty-goals">No goals</li>`;
+        return;
+      }
+
+      listEl.innerHTML = scorers.map(scorer => {
+        const totals = scorer.goals
+          .filter(value => value !== null && value !== undefined && value !== "")
+          .join(", ");
+
+        return `
+          <li>
+            <span>${escapeHtml(scorer.name)}</span>
+            <em>${totals ? `(${escapeHtml(totals)})` : ""}</em>
+          </li>
+        `;
+      }).join("");
+    }
+
+    function getFinalLabel(landing) {
+      const state = String(landing?.gameState || "").toUpperCase();
+      const period = landing?.periodDescriptor || {};
+      const periodType = String(period.periodType || "").toUpperCase();
+
+      if (!["OFF", "FINAL"].includes(state)) {
+        return getGameStateText(landing);
+      }
+
+      if (periodType === "SO") return "Final / SO";
+      if (periodType === "OT" || Number(period.number) > Number(period.maxRegulationPeriods || 3)) {
+        return "Final / OT";
+      }
+
+      return "Final";
+    }
+
+    function getDefault(value) {
+      if (value === null || value === undefined) return "";
+      if (typeof value === "string" || typeof value === "number") return value;
+      return value.default || value.en || value.fr || "";
+    }
+
+    function getPlayoffHeaderText(landing, selectedGame = null) {
+      if (!isPlayoffGame(landing, selectedGame)) return "";
+
+      const gameNumber = extractPlayoffGameNumber(landing, selectedGame);
+      const seriesText = extractSeriesStatusText(landing, selectedGame);
+      const parts = [];
+
+      if (gameNumber) parts.push(`Game ${gameNumber}`);
+      if (seriesText) parts.push(seriesText);
+
+      return parts.join(" - ");
+    }
+
+    function isPlayoffGame(landing, selectedGame = null) {
+      const id = String(landing?.id || getGameId(selectedGame || state.selectedGame) || "");
+      return Number(landing?.seasonType || selectedGame?.seasonType || selectedGame?.gameType) === 3
+        || id.slice(4, 6) === "03"
+        || gatherSeriesCandidates(landing, selectedGame).length > 0;
+    }
+
+    function extractPlayoffGameNumber(landing, selectedGame = null) {
+      const candidates = [
+        landing?.gameNumber,
+        selectedGame?.gameNumber,
+        selectedGame?.seriesStatus?.gameNumber,
+        landing?.seriesStatus?.gameNumber,
+        landing?.playoffSeries?.gameNumber,
+        landing?.summary?.playoffSeries?.gameNumber
+      ];
+
+      for (const node of gatherSeriesCandidates(landing, selectedGame)) {
+        for (const key of ["gameNumber", "seriesGameNumber", "gameNo", "game"]) {
+          if (node?.[key] !== undefined && node?.[key] !== null && node?.[key] !== "") {
+            candidates.push(node[key]);
+          }
+        }
+
+        for (const value of Object.values(node)) {
+          if (typeof value === "string") {
+            const match = value.match(/game\s*(\d+)/i);
+            if (match) candidates.push(Number(match[1]));
+          }
+        }
+      }
+
+      for (const value of candidates) {
+        const number = Number(value);
+        if (Number.isFinite(number) && number > 0 && number < 8) return number;
+      }
+
+      const id = String(landing?.id || getGameId(selectedGame || state.selectedGame) || "");
+      if (id.length >= 10 && id.slice(4, 6) === "03") return Number(id.slice(-1));
+      return "";
+    }
+
+    function extractSeriesStatusText(landing, selectedGame = null) {
+      const awayAbbrev = getTeamAbbrev(landing?.awayTeam || selectedGame?.awayTeam || {});
+      const homeAbbrev = getTeamAbbrev(landing?.homeTeam || selectedGame?.homeTeam || {});
+
+      const textCandidates = [];
+      const numericCandidates = [];
+
+      for (const node of gatherSeriesCandidates(landing, selectedGame)) {
+        for (const [key, value] of Object.entries(node || {})) {
+          if (typeof value === "string") {
+            textCandidates.push(value);
+          }
+        }
+        numericCandidates.push(node);
+      }
+
+      textCandidates.push(
+        landing?.seriesStatusText,
+        selectedGame?.seriesStatusText,
+        landing?.seriesStatus?.seriesStatusText,
+        landing?.seriesStatus?.statusText,
+        selectedGame?.seriesStatus?.seriesStatusText,
+        selectedGame?.seriesStatus?.statusText
+      );
+
+      for (const rawText of textCandidates.filter(Boolean)) {
+        const text = String(rawText).trim();
+        let match = text.match(/([A-Z]{2,4})\s+leads(?:\s+series)?\s+(\d+)\s*-\s*(\d+)/i);
+        if (match) return `${match[1].toUpperCase()} leads series ${match[2]}-${match[3]}`;
+
+        match = text.match(/series\s+tied\s+(\d+)\s*-\s*(\d+)/i);
+        if (match) return `Series tied ${match[1]}-${match[2]}`;
+      }
+
+      for (const series of numericCandidates) {
+        let awayWins = firstDefined(
+          series?.awayTeamWins,
+          series?.awayWins,
+          series?.wins?.away,
+          series?.wins?.[awayAbbrev],
+          series?.wins?.[series?.awayTeamAbbrev],
+          series?.wins?.[landing?.awayTeam?.id],
+          series?.wins?.[selectedGame?.awayTeam?.id]
+        );
+
+        let homeWins = firstDefined(
+          series?.homeTeamWins,
+          series?.homeWins,
+          series?.wins?.home,
+          series?.wins?.[homeAbbrev],
+          series?.wins?.[series?.homeTeamAbbrev],
+          series?.wins?.[landing?.homeTeam?.id],
+          series?.wins?.[selectedGame?.homeTeam?.id]
+        );
+
+        const topSeedWins = firstDefined(series?.topSeedWins, series?.higherSeedWins);
+        const bottomSeedWins = firstDefined(series?.bottomSeedWins, series?.lowerSeedWins);
+        const topSeedAbbrev = String(getDefault(firstDefined(series?.topSeedTeamAbbrev, series?.higherSeedTeamAbbrev)) || "").toUpperCase();
+        const bottomSeedAbbrev = String(getDefault(firstDefined(series?.bottomSeedTeamAbbrev, series?.lowerSeedTeamAbbrev)) || "").toUpperCase();
+
+        if ((awayWins === undefined || homeWins === undefined) && topSeedWins !== undefined && bottomSeedWins !== undefined) {
+          if (topSeedAbbrev === awayAbbrev) {
+            awayWins = topSeedWins; homeWins = bottomSeedWins;
+          } else if (topSeedAbbrev === homeAbbrev) {
+            awayWins = bottomSeedWins; homeWins = topSeedWins;
+          } else if (bottomSeedAbbrev === awayAbbrev) {
+            awayWins = bottomSeedWins; homeWins = topSeedWins;
+          } else if (bottomSeedAbbrev === homeAbbrev) {
+            awayWins = topSeedWins; homeWins = bottomSeedWins;
+          }
+        }
+
+        if (Number.isFinite(Number(awayWins)) && Number.isFinite(Number(homeWins))) {
+          awayWins = Number(awayWins);
+          homeWins = Number(homeWins);
+
+          if (awayWins === homeWins) return `Series tied ${awayWins}-${homeWins}`;
+          if (awayWins > homeWins) return `${awayAbbrev} leads series ${awayWins}-${homeWins}`;
+          return `${homeAbbrev} leads series ${homeWins}-${awayWins}`;
+        }
+      }
+
+      return "";
+    }
+
+    function gatherSeriesCandidates(...roots) {
+      const results = [];
+      const seen = new Set();
+
+      function walk(value, depth = 0) {
+        if (!value || typeof value !== "object" || seen.has(value) || depth > 5) return;
+        seen.add(value);
+
+        if (looksLikeSeriesNode(value)) results.push(value);
+
+        for (const [key, child] of Object.entries(value)) {
+          if (!child || typeof child !== "object") continue;
+          if (depth < 2 || /series|playoff|status/i.test(key) || looksLikeSeriesNode(child)) {
+            walk(child, depth + 1);
+          }
+        }
+      }
+
+      roots.forEach(root => walk(root));
+      return results;
+    }
+
+    function looksLikeSeriesNode(value) {
+      if (!value || typeof value !== "object") return false;
+      const keys = Object.keys(value).map(key => key.toLowerCase());
+      return keys.some(key =>
+        key.includes("series")
+        || key.includes("topseedwins")
+        || key.includes("bottomseedwins")
+        || key.includes("awayteamwins")
+        || key.includes("hometeamwins")
+        || key.includes("higherseedwins")
+        || key.includes("lowerseedwins")
+      );
+    }
+
+    function firstDefined(...values) {
+      return values.find(value => value !== undefined && value !== null && value !== "");
+    }
+
+    function ensureHex(value, fallback = "275EFE") {
+      const cleaned = String(value || fallback).replace("#", "").trim();
+      return `#${cleaned || fallback}`;
+    }
+
+    function hexToRgba(hex, alpha = 1) {
+      const cleaned = ensureHex(hex).replace("#", "");
+      const normalized = cleaned.length === 3
+        ? cleaned.split("").map(ch => ch + ch).join("")
+        : cleaned.padEnd(6, "0").slice(0, 6);
+      const int = parseInt(normalized, 16);
+      const r = (int >> 16) & 255;
+      const g = (int >> 8) & 255;
+      const b = int & 255;
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
+    function formatDisplayDate(dateString) {
+      if (!dateString) return "";
+      const [year, month, day] = String(dateString).split("-").map(Number);
+      if (!year || !month || !day) return dateString;
+
+      const date = new Date(year, month - 1, day);
+
+      return new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+      }).format(date).toUpperCase();
+    }
+
+    function handleBackgroundUpload(event) {
+      const file = event.target.files?.[0];
+
+      if (!file) {
+        state.backgroundImageDataUrl = "";
+        els.post.style.removeProperty("--bg-image");
+        saveCustomPreferences();
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataUrl = String(reader.result || "");
+        const safeUrl = dataUrl.replace(/"/g, "%22");
+        state.backgroundImageDataUrl = dataUrl;
+        els.post.style.setProperty("--bg-image", `url("${safeUrl}")`);
+        updateBackgroundPosition();
+        saveCustomPreferences();
+        setStatus("Background image applied.", "success");
+      };
+      reader.onerror = () => setStatus("Unable to load this background image.", "error");
+      reader.readAsDataURL(file);
+    }
+
+    async function downloadPng() {
+      if (!state.generatedAtLeastOnce) {
+        await renderSelectedGame();
+        if (!state.generatedAtLeastOnce) return;
+      }
+
+      setStatus("Preparing PNG export from the live preview...");
+
+      let holder = null;
+
+      try {
+        await preloadTransducerFonts();
+        const { clone, holder: exportHolder } = await createExportNode();
+        holder = exportHolder;
+
+        await inlineImagesForExport(clone);
+        await waitForImages(clone);
+
+        const blob = await domtoimage.toBlob(clone, {
+          width: 1080,
+          height: 1080,
+          cacheBust: true,
+          bgcolor: 'transparent',
+          style: {
+            transform: 'none',
+            transformOrigin: 'top left'
+          }
+        });
+
+        if (!blob) throw new Error('dom-to-image-more returned an empty blob.');
+
+        saveBlob(blob, getDownloadFileName());
+        setStatus("PNG downloaded from the live preview.", "success");
+        return;
+      } catch (domError) {
+        console.error("Live preview export failed:", domError);
+      } finally {
+        if (holder && holder.parentNode) holder.parentNode.removeChild(holder);
+      }
+
+      try {
+        await preloadTransducerFonts();
+        const blob = await renderCanvasExport();
+        if (!blob) throw new Error("Unable to create PNG blob.");
+
+        saveBlob(blob, getDownloadFileName());
+        setStatus("PNG downloaded with fallback export.", "success");
+      } catch (canvasError) {
+        console.error("Fallback canvas export failed:", canvasError);
+        setStatus("Export failed. The live-preview export and the fallback export both failed.", "error");
+      }
+    }
+
+    async function renderCanvasExport() {
+      const canvas = document.createElement("canvas");
+      canvas.width = 1080;
+      canvas.height = 1080;
+
+      const ctx = canvas.getContext("2d");
+      const W = 1080;
+      const H = 1080;
+
+      await preloadTransducerFonts();
+
+      const baseGradient = ctx.createLinearGradient(0, 0, W, H);
+      baseGradient.addColorStop(0, "#070a10");
+      baseGradient.addColorStop(1, "#151824");
+      ctx.fillStyle = baseGradient;
+      ctx.fillRect(0, 0, W, H);
+
+      if (state.backgroundImageDataUrl) {
+        try {
+          const bgImg = await loadCanvasImage(state.backgroundImageDataUrl);
+          ctx.save();
+          ctx.globalAlpha = Number(els.bgOpacity.value || 0.56);
+          drawImageCover(ctx, bgImg, 0, 0, W, H, state.bgPositionX / 100, state.bgPositionY / 100, state.bgZoom / 100);
+          ctx.restore();
+        } catch (error) {
+          console.warn("Background image could not be drawn:", error);
+        }
+      }
+
+      if (!state.customMode) {
+        drawRadialGlow(ctx, -120, -100, 620, cssVarValue("--away-color-glow", "rgba(39, 94, 254, .34)"));
+        drawRadialGlow(ctx, W + 120, -70, 620, cssVarValue("--home-color-glow", "rgba(214, 37, 57, .34)"));
+      }
+
+      const sideOverlay = ctx.createLinearGradient(0, 0, W, 0);
+      sideOverlay.addColorStop(0, cssVarValue("--away-color-banner", "rgba(39, 94, 254, .22)"));
+      sideOverlay.addColorStop(0.34, "rgba(0,0,0,0)");
+      sideOverlay.addColorStop(0.66, "rgba(0,0,0,0)");
+      sideOverlay.addColorStop(1, cssVarValue("--home-color-banner", "rgba(214, 37, 57, .22)"));
+      ctx.fillStyle = sideOverlay;
+      ctx.fillRect(0, 0, W, H);
+
+      const darkOverlay = ctx.createLinearGradient(0, 0, 0, H);
+      darkOverlay.addColorStop(0, "rgba(0,0,0,0.02)");
+      darkOverlay.addColorStop(0.56, "rgba(0,0,0,0.10)");
+      darkOverlay.addColorStop(1, "rgba(0,0,0,0.18)");
+      ctx.fillStyle = darkOverlay;
+      ctx.fillRect(0, 0, W, H);
+
+      if (!state.customMode) {
+        drawTeamStripe(
+          ctx,
+          0,
+          0,
+          30,
+          H,
+          cssVarValue("--away-color", "#275EFE"),
+          cssVarValue("--away-color-2", "#9BB5FF"),
+          cssVarValue("--away-color-3", "#DDE7FF"),
+          "left"
+        );
+        drawTeamStripe(
+          ctx,
+          W - 30,
+          0,
+          30,
+          H,
+          cssVarValue("--home-color", "#D62539"),
+          cssVarValue("--home-color-2", "#FFB2BC"),
+          cssVarValue("--home-color-3", "#FFE0E5"),
+          "right"
+        );
+      }
+
+      const marginX = 50;
+      const topY = 42;
+      const finalText = els.finalBadge.textContent || "Final";
+      const seriesText = els.seriesMeta.textContent || "";
+      const dateText = els.postDate.textContent || "";
+      const creditText = String(els.imageCredit.textContent || "").trim();
+      const headerMarkSrc = els.headerMark?.dataset?.exportSrc || els.headerMark?.currentSrc || els.headerMark?.src || "";
+
+      ctx.textBaseline = "middle";
+
+      const headerMarkW = 125;
+      let headerMarkH = 72;
+      const headerMarkY = topY;
+      if (headerMarkSrc) {
+        try {
+          const headerMarkData = headerMarkSrc.startsWith("data:") ? headerMarkSrc : await fetchImageAsDataUrl(headerMarkSrc, true);
+          const headerMarkImg = await loadCanvasImage(headerMarkData);
+          headerMarkH = Math.max(1, Math.round(headerMarkW * (headerMarkImg.naturalHeight / headerMarkImg.naturalWidth)));
+          drawImageContain(ctx, headerMarkImg, (W - headerMarkW) / 2, headerMarkY, headerMarkW, headerMarkH, "center");
+        } catch (error) {
+          console.warn("Header mark could not be drawn:", error);
+        }
+      }
+
+      const headerMarkBottom = headerMarkY + headerMarkH;
+      const sideTextCenterY = topY + 27;
+
+      setCanvasFont(ctx, 600, 26, "transducer-extended");
+      const pillTextW = ctx.measureText(finalText).width;
+      const pillW = Math.ceil(pillTextW + 44);
+      drawRoundRect(ctx, marginX, topY, pillW, 54, 27, "rgba(255,255,255,0.12)", "rgba(255,255,255,0.22)");
+      ctx.fillStyle = "#fff";
+      ctx.textAlign = "left";
+      ctx.fillText(finalText, marginX + 22, sideTextCenterY);
+
+
+      setCanvasFont(ctx, 600, 30, "transducer-condensed");
+      ctx.fillStyle = "rgba(255,255,255,0.76)";
+      ctx.textAlign = "right";
+      ctx.fillText(dateText, W - marginX, sideTextCenterY);
+
+      const away = {
+        abv: els.awayAbbrev.textContent || "",
+        name: els.awayName.textContent || "",
+        score: els.awayScore.textContent || "",
+        logo: els.awayLogo.dataset.exportSrc || els.awayLogo.src || ""
+      };
+      const home = {
+        abv: els.homeAbbrev.textContent || "",
+        name: els.homeName.textContent || "",
+        score: els.homeScore.textContent || "",
+        logo: els.homeLogo.dataset.exportSrc || els.homeLogo.src || ""
+      };
+      const awayLogoShift = state.customMode && state.customAwayLogoDataUrl ? Math.max(-140, Math.min(140, Number(els.customAwayLogoOffset?.value || 0))) : 0;
+      const homeLogoShift = state.customMode && state.customHomeLogoDataUrl ? Math.max(-140, Math.min(140, Number(els.customHomeLogoOffset?.value || 0))) : 0;
+
+      const awayGoals = readGoalRows(els.awayGoals);
+      const homeGoals = readGoalRows(els.homeGoals);
+      const maxGoals = Math.max(awayGoals.length, homeGoals.length, 1);
+      const density = getExportDensity(maxGoals);
+
+      const cardGap = 14;
+      const cardX = marginX;
+      const cardW = (W - marginX * 2 - cardGap) / 2;
+      const cardH = Math.min(365, Math.max(175, density.cardTopPad + 34 + maxGoals * density.rowH + 18));
+      const cardBottomGap = 44;
+      const cardY = H - cardBottomGap - cardH;
+
+      const scoreBottom = cardY - 26;
+      const headerBottom = Math.max(topY + 54, headerMarkBottom + 18);
+      const teamTop = headerBottom + 22;
+
+      const metaY = Math.max(teamTop + 148, scoreBottom - density.scoreSize - 54);
+      const logoBoxW = 220;
+      const logoBoxH = density.scoreSize >= 170 ? 128 : density.scoreSize >= 148 ? 118 : 108;
+      const logoY = Math.max(teamTop, metaY - logoBoxH - 34);
+      await drawLogo(ctx, away.logo, marginX - 6 + awayLogoShift, logoY, logoBoxW, logoBoxH, "left");
+      await drawLogo(ctx, home.logo, W - marginX - logoBoxW + 6 + homeLogoShift, logoY, logoBoxW, logoBoxH, "right");
+
+      setCanvasFont(ctx, 600, density.abvSize, "transducer-extended");
+      ctx.fillStyle = "#fff";
+      ctx.textAlign = "left";
+      ctx.fillText(away.abv, marginX + 4, metaY);
+      ctx.textAlign = "right";
+      ctx.fillText(home.abv, W - marginX - 4, metaY);
+
+      setCanvasFont(ctx, 600, density.teamNameSize, "transducer-condensed");
+      ctx.fillStyle = "rgba(255,255,255,0.88)";
+      ctx.textAlign = "left";
+      ctx.fillText(away.name.toUpperCase(), marginX + 4, metaY + density.teamNameOffset);
+      ctx.textAlign = "right";
+      ctx.fillText(home.name.toUpperCase(), W - marginX - 4, metaY + density.teamNameOffset);
+
+      setCanvasFont(ctx, 600, density.scoreSize, "transducer-extended");
+      ctx.fillStyle = "#fff";
+      ctx.textBaseline = "alphabetic";
+      ctx.textAlign = "left";
+      ctx.fillText(away.score, marginX + 4, scoreBottom);
+      ctx.textAlign = "right";
+      ctx.fillText(home.score, W - marginX - 4, scoreBottom);
+
+      if (seriesText) {
+        ctx.textBaseline = "middle";
+        setCanvasFont(ctx, 600, 31, "transducer-condensed");
+        ctx.fillStyle = "rgba(255,255,255,0.92)";
+        ctx.textAlign = "center";
+        ctx.fillText(seriesText, W / 2, scoreBottom - 30);
+      }
+
+      const blurSnapshot = document.createElement("canvas");
+      blurSnapshot.width = W;
+      blurSnapshot.height = H;
+      blurSnapshot.getContext("2d").drawImage(canvas, 0, 0);
+
+      const hideScorerCards = state.customMode && els.customHideAllScorers?.checked === true;
+      if (!hideScorerCards) {
+        drawScorerCard(ctx, blurSnapshot, cardX, cardY, cardW, cardH, away.abv, awayGoals, density);
+        drawScorerCard(ctx, blurSnapshot, cardX + cardW + cardGap, cardY, cardW, cardH, home.abv, homeGoals, density);
+      }
+
+      if (creditText) {
+        ctx.textBaseline = "alphabetic";
+        ctx.textAlign = "left";
+        setCanvasFont(ctx, 100, 18, "transducer-condensed");
+        ctx.fillStyle = "rgba(255,255,255,0.60)";
+        ctx.fillText(creditText, marginX + 2, H - 14);
+      }
+
+      return new Promise(resolve => canvas.toBlob(resolve, "image/png"));
+    }
+
+    function getExportDensity(maxGoals) {
+      if (maxGoals >= 11) {
+        return { goalFont: 24, rowH: 26, titleFont: 17, scoreSize: 132, abvSize: 46, teamNameSize: 22, teamNameOffset: 39, cardTopPad: 12 };
+      }
+      if (maxGoals >= 8) {
+        return { goalFont: 27, rowH: 31, titleFont: 18, scoreSize: 148, abvSize: 52, teamNameSize: 24, teamNameOffset: 42, cardTopPad: 14 };
+      }
+      if (maxGoals >= 6) {
+        return { goalFont: 30, rowH: 35, titleFont: 19, scoreSize: 164, abvSize: 56, teamNameSize: 25, teamNameOffset: 45, cardTopPad: 16 };
+      }
+      return { goalFont: 34, rowH: 40, titleFont: 20, scoreSize: 178, abvSize: 58, teamNameSize: 26, teamNameOffset: 48, cardTopPad: 18 };
+    }
+
+    function drawScorerCard(ctx, backdropCanvas, x, y, w, h, abv, goals, density) {
+      if (backdropCanvas) {
+        ctx.save();
+        roundRectPath(ctx, x, y, w, h, 24);
+        ctx.clip();
+        const pad = 18;
+        ctx.filter = "blur(14px)";
+        ctx.drawImage(backdropCanvas, x - pad, y - pad, w + pad * 2, h + pad * 2, x - pad, y - pad, w + pad * 2, h + pad * 2);
+        ctx.filter = "none";
+        ctx.restore();
+      }
+
+      drawRoundRect(ctx, x, y, w, h, 24, "rgba(0,0,0,0.14)", "rgba(255,255,255,0.10)");
+
+      ctx.textBaseline = "middle";
+      setCanvasFont(ctx, 600, density.titleFont, "transducer-extended");
+      ctx.fillStyle = "#fff";
+      ctx.textAlign = "left";
+      ctx.fillText(abv, x + 20, y + 28);
+
+      setCanvasFont(ctx, 600, density.titleFont, "transducer");
+      ctx.fillStyle = "rgba(255,255,255,0.84)";
+      ctx.textAlign = "right";
+      ctx.fillText("GOAL SCORERS", x + w - 20, y + 28);
+
+      const rows = goals.length ? goals : [{ name: "No goals", total: "" }];
+      let rowY = y + 66;
+
+      for (const row of rows) {
+        setCanvasFont(ctx, 600, density.goalFont, "transducer-condensed");
+        ctx.fillStyle = goals.length ? "#fff" : "rgba(255,255,255,0.46)";
+        ctx.textAlign = "left";
+        ctx.fillText(row.name, x + 20, rowY);
+
+        if (row.total) {
+          ctx.fillStyle = "rgba(255,255,255,0.72)";
+          ctx.textAlign = "right";
+          ctx.fillText(row.total, x + w - 20, rowY);
+        }
+
+        ctx.strokeStyle = "rgba(255,255,255,0.08)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x + 20, rowY + density.rowH / 2);
+        ctx.lineTo(x + w - 20, rowY + density.rowH / 2);
+        ctx.stroke();
+
+        rowY += density.rowH;
+      }
+    }
+
+    function readGoalRows(listEl) {
+      return Array.from(listEl.querySelectorAll("li")).map(li => {
+        const name = li.querySelector("span")?.textContent?.trim() || li.textContent.trim();
+        const total = li.querySelector("em")?.textContent?.trim() || "";
+        if (/^no goals$/i.test(name)) return null;
+        return { name, total };
+      }).filter(Boolean);
+    }
+
+    async function drawLogo(ctx, src, x, y, w, h, align = "center") {
+      if (!src) return;
+      try {
+        const imageSrc = src.startsWith("data:") ? src : await fetchImageAsDataUrl(src, true);
+        const img = await loadCanvasImage(imageSrc);
+        drawImageContain(ctx, img, x, y, w, h, align);
+      } catch (error) {
+        console.warn("Logo could not be drawn:", error);
+      }
+    }
+
+    function loadCanvasImage(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+      });
+    }
+
+    function drawImageCover(ctx, img, x, y, w, h, posX = 0.5, posY = 0.5, zoom = 1) {
+      const baseScale = Math.max(w / img.naturalWidth, h / img.naturalHeight) * zoom;
+      const sw = img.naturalWidth * baseScale;
+      const sh = img.naturalHeight * baseScale;
+      const dx = x + (w - sw) * posX;
+      const dy = y + (h - sh) * posY;
+      ctx.drawImage(img, dx, dy, sw, sh);
+    }
+
+    function drawImageContain(ctx, img, x, y, w, h, align = "center") {
+      const scale = Math.min(w / img.naturalWidth, h / img.naturalHeight);
+      const dw = img.naturalWidth * scale;
+      const dh = img.naturalHeight * scale;
+      let dx = x + (w - dw) / 2;
+      if (align === "left") dx = x;
+      if (align === "right") dx = x + w - dw;
+      const dy = y + (h - dh) / 2;
+      ctx.drawImage(img, dx, dy, dw, dh);
+    }
+
+    function drawRadialGlow(ctx, x, y, radius, color) {
+      const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+      gradient.addColorStop(0, color);
+      gradient.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, 1080, 1080);
+    }
+
+    function drawTeamStripe(ctx, x, y, w, h, primary, secondary, tertiary, side = "left") {
+      const stripeCanvas = document.createElement("canvas");
+      stripeCanvas.width = Math.max(1, Math.ceil(w));
+      stripeCanvas.height = Math.max(1, Math.ceil(h));
+      const sctx = stripeCanvas.getContext("2d");
+      const primaryInset = 3;
+
+      sctx.fillStyle = primary;
+      if (side === "left") {
+        sctx.fillRect(0, 0, Math.max(0, w - primaryInset), h);
+      } else {
+        sctx.fillRect(primaryInset, 0, Math.max(0, w - primaryInset), h);
+      }
+
+      sctx.beginPath();
+      if (side === "left") {
+        sctx.moveTo(-4, h * 0.668);
+        sctx.lineTo(w + 4, h * 0.652);
+        sctx.lineTo(w + 4, h + 4);
+        sctx.lineTo(-4, h + 4);
+      } else {
+        sctx.moveTo(-4, h * 0.652);
+        sctx.lineTo(w + 4, h * 0.668);
+        sctx.lineTo(w + 4, h + 4);
+        sctx.lineTo(-4, h + 4);
+      }
+      sctx.closePath();
+      sctx.fillStyle = secondary;
+      sctx.fill();
+
+      sctx.beginPath();
+      if (side === "left") {
+        sctx.moveTo(-4, h * 0.899);
+        sctx.lineTo(w + 4, h * 0.883);
+        sctx.lineTo(w + 4, h + 4);
+        sctx.lineTo(-4, h + 4);
+      } else {
+        sctx.moveTo(-4, h * 0.883);
+        sctx.lineTo(w + 4, h * 0.899);
+        sctx.lineTo(w + 4, h + 4);
+        sctx.lineTo(-4, h + 4);
+      }
+      sctx.closePath();
+      sctx.fillStyle = tertiary;
+      sctx.fill();
+
+      sctx.globalCompositeOperation = "destination-in";
+      const alphaFade = sctx.createLinearGradient(0, 0, 0, h);
+      alphaFade.addColorStop(0, "rgba(0,0,0,0)");
+      alphaFade.addColorStop(0.14, "rgba(0,0,0,0)");
+      alphaFade.addColorStop(0.24, "rgba(0,0,0,0.06)");
+      alphaFade.addColorStop(0.34, "rgba(0,0,0,0.24)");
+      alphaFade.addColorStop(0.44, "rgba(0,0,0,0.62)");
+      alphaFade.addColorStop(0.52, "rgba(0,0,0,0.92)");
+      alphaFade.addColorStop(0.58, "rgba(0,0,0,1)");
+      alphaFade.addColorStop(1, "rgba(0,0,0,1)");
+      sctx.fillStyle = alphaFade;
+      sctx.fillRect(0, 0, w, h);
+
+      sctx.globalCompositeOperation = "source-over";
+      sctx.strokeStyle = "rgba(255,255,255,0.18)";
+      sctx.lineWidth = 1;
+      sctx.beginPath();
+      if (side === "left") {
+        sctx.moveTo(w - 0.5, 0);
+        sctx.lineTo(w - 0.5, h);
+      } else {
+        sctx.moveTo(0.5, 0);
+        sctx.lineTo(0.5, h);
+      }
+      sctx.stroke();
+
+      ctx.drawImage(stripeCanvas, x, y, w, h);
+    }
+
+    function roundRectPath(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    function drawRoundRect(ctx, x, y, w, h, r, fill, stroke) {
+      roundRectPath(ctx, x, y, w, h, r);
+
+      if (fill) {
+        ctx.fillStyle = fill;
+        ctx.fill();
+      }
+
+      if (stroke) {
+        ctx.strokeStyle = stroke;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+
+    function setCanvasFont(ctx, weight, size, family) {
+      ctx.font = `${weight} ${size}px "${family}", sans-serif`;
+    }
+
+    function cssVarValue(name, fallback) {
+      return getComputedStyle(els.post).getPropertyValue(name).trim() || fallback;
+    }
+
+    async function createExportNode() {
+      const clone = els.post.cloneNode(true);
+      const holder = document.createElement("div");
+
+      holder.style.position = "fixed";
+      holder.style.left = "-5000px";
+      holder.style.top = "0";
+      holder.style.width = "1080px";
+      holder.style.height = "1080px";
+      holder.style.overflow = "hidden";
+      holder.style.zIndex = "-1";
+      holder.style.pointerEvents = "none";
+
+      const exportStyle = document.createElement("style");
+      exportStyle.textContent = await getTypekitCssText();
+      holder.appendChild(exportStyle);
+
+      clone.style.transform = "none";
+      clone.style.width = "1080px";
+      clone.style.height = "1080px";
+
+      if (state.backgroundImageDataUrl) {
+        clone.style.setProperty("--bg-image", `url("${state.backgroundImageDataUrl.replace(/"/g, "%22")}")`);
+      }
+      clone.style.setProperty("--bg-opacity", els.bgOpacity.value);
+      clone.style.setProperty("--bg-pos-x", `${state.bgPositionX}%`);
+      clone.style.setProperty("--bg-pos-y", `${state.bgPositionY}%`);
+      clone.style.setProperty("--bg-zoom", (state.bgZoom / 100).toFixed(2));
+
+      holder.appendChild(clone);
+      document.body.appendChild(holder);
+
+      return { clone, holder };
+    }
+
+    function saveBlob(blob, fileName) {
+      if (window.navigator && typeof window.navigator.msSaveOrOpenBlob === "function") {
+        window.navigator.msSaveOrOpenBlob(blob, fileName);
+        return;
+      }
+
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = objectUrl;
+      link.download = fileName;
+      link.rel = "noopener";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(objectUrl), 4000);
+    }
+
+    function waitForImages(root) {
+      const images = Array.from(root.querySelectorAll("img"))
+        .filter(img => img.src);
+
+      return Promise.all(images.map(img => {
+        if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+
+        return new Promise(resolve => {
+          img.onload = resolve;
+          img.onerror = resolve;
+        });
+      }));
+    }
+
+    function getDownloadFileName() {
+      const landing = state.currentLanding;
+      const date = landing?.gameDate || els.gameDate.value || getLocalDateString();
+      const away = getTeamAbbrev(landing?.awayTeam || state.selectedGame?.awayTeam || { abbrev: "AWY" });
+      const home = getTeamAbbrev(landing?.homeTeam || state.selectedGame?.homeTeam || { abbrev: "HME" });
+      return `nhl-final-score-${date}-${away}-${home}.png`.toLowerCase();
+    }
+
+    function setStatus(message, type = "") {
+      els.status.textContent = message;
+      els.status.className = `status ${type}`.trim();
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+  </script>
+</body>
+</html>
